@@ -11,7 +11,14 @@ class Actuator(object):
 
     @property
     def encoder(self):
-        return self.odrv.encoder_estimator1.pos_estimate
+        posEstimate = self.odrv.encoder_estimator1.pos_estimate
+
+        if posEstimate > 0.5 :
+            calibratedEncoder = posEstimate - 1.0
+        else :
+            calibratedEncoder = posEstimate
+
+        return calibratedEncoder
 
     @property
     def motor_pos(self):
