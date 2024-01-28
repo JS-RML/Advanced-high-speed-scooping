@@ -1,7 +1,7 @@
 import odrive
 import numpy as np
 from odrive.enums import *
-from actuator import *
+from Actuator import *
 from time import sleep
 import doControlCard
 import doControlCracker

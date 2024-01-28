@@ -1,6 +1,6 @@
 import odrive
 import numpy as np
-from actuator import *
+from Actuator import *
 
 class ScoopingObject(object):
 
