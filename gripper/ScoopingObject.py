@@ -1,6 +1,6 @@
 import odrive
 import numpy as np
-from Actuator import *
+from .Actuator import *
 
 class ScoopingObject(object):
 
@@ -77,10 +77,7 @@ class ScoopingObject(object):
     def Move2ScoopingPosition(self):
         # TODO 검증 필요함
         if self.leftFinger0.armed == 0 or self.leftFinger0.armed == 0 or self.rightFinger0.armed == 0 or self.rightFinger1.armed == 0:
-            self.leftFinger0.armed(1)
-            self.leftFinger1.armed(1)
-            self.rightFinger0.armed(1)
-            self.rightFinger1.armed(1)
+            self.SetControlState()
         # TODO 이 부분 actuator class 와 연결시키기
         self.odrv0.axis0.controller.input_pos = self.scoopingPosition[0]
         self.odrv1.axis0.controller.input_pos = self.scoopingPosition[1]
@@ -111,3 +108,15 @@ class ScoopingObject(object):
         tempArray[2] = self.rightFinger0.encoder
         tempArray[3] = self.rightFinger1.encoder
         return tempArray
+
+    def SetControlState(self):
+        self.leftFinger0.armed(True)
+        self.leftFinger1.armed(True)
+        self.rightFinger0.armed(True)
+        self.rightFinger1.armed(True)
+
+    def SetIdleState(self):
+        self.leftFinger0.armed(False)
+        self.leftFinger1.armed(False)
+        self.rightFinger0.armed(False)
+        self.rightFinger1.armed(False)

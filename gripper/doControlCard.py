@@ -1,5 +1,5 @@
-import mainGripper
-from ScoopingObject import *
+from . import mainGripper
+from .ScoopingObject import *
 
 def doControlCard():
     count = 0
@@ -10,6 +10,5 @@ def doControlCard():
     card.GrabPosition(0.032, 0.020, -0.152, 0.289)
 
     while(count <200) :
-
 
         count += 1
