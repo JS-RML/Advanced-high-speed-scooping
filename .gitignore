@@ -1,5 +1,7 @@
 /.idea
 /.python-version
 /gripper/.python-version
+/gripper/__pycache__
+/RB5/__pycache__
 /__pycache__
 
