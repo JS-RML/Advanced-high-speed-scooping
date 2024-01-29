@@ -44,15 +44,15 @@ class Actuator(object):
 
     @property
     def armed(self):
-        return self.axis.current_state is AXIS_STATE_CLOSED_LOOP_CONTROL
+        return self.axis.current_state is AxisState.CLOSED_LOOP_CONTROL
 
     @armed.setter
     def armed(self, val):
         if val:  # arm
-            self.axis.controller.config.input_mode = INPUT_MODE_PASSTHROUGH # INPUT_MODE_POS_FILTER
-            self.axis.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
+            self.axis.controller.config.input_mode = InputMode.PASSTHROUGH # INPUT_MODE_POS_FILTER
+            self.axis.requested_state = AxisState.CLOSED_LOOP_CONTROL
         else:  # disarm
-            self.axis.requested_state = AXIS_STATE_IDLE
+            self.axis.requested_state = AxisState.IDLE
 
     @property
     def stiffness(self):
