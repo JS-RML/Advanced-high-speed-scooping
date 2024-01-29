@@ -4,6 +4,8 @@ current_dir = os.path.dirname(os.path.abspath(__file__)) # 예를들어 부모 �
 sys.path.append(current_dir)
 import doControlCard
 import doControlCracker
+import doContorlDomino
+import doContorlGostone
 import motorState
 from enums import MotorState
 
@@ -11,21 +13,22 @@ from enums import MotorState
 # controlSignal = 'card'
 # controlSignal = 'domino'
 # controlSignal = 'goStone'
-controlSignal = 'cracker'
-# controlSignal = 'chip'
+# controlSignal = 'cracker'
+controlSignal = 'chip'
 # controlSignal = 'control_mode'
 # controlSignal = 'idle' # 완전 대기 상태
 #######################################
+controlSignal = 0
 
 def switchCase(case):
     if case == 'card':
         doControlCard.doControlCard()
 
     elif case == 'domino':
-        print("[Case domino is selected]")
+        doContorlDomino.doControlDomino()
 
     elif case == 'goStone':
-        print("[Case go-stone is selected]")
+        doContorlGostone.doControlGoStone()
 
     elif case == 'cracker':
         doControlCracker.doControlCracker()
@@ -42,10 +45,9 @@ def switchCase(case):
         print("For the operation, ensure the state is set to CONTROL mode...")
 
     else:
-        print("Default case")
+        print("Check the controlSignal")
 
 # Gripper main is started
 def mainGripper():
-    count = 0
     print("[Gripper main...]")
     switchCase(controlSignal)

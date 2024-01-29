@@ -5,7 +5,6 @@ import sys
 import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
-
 def threadGripper():
     print("[Gripper thread...]")
     mainGripper.mainGripper()
@@ -14,10 +13,9 @@ def threadRB5():
     print("[RB5 thread...]")
     mainRB5.mainRB5()
 
-
 if __name__ == "__main__":
-    thread1 = threading.Thread(target = threadGripper)
-    thread2 = threading.Thread(target = threadRB5)
+    thread1 = threading.Thread(target=threadGripper)
+    thread2 = threading.Thread(target=threadRB5)
 
     thread1.start()
     thread2.start()
