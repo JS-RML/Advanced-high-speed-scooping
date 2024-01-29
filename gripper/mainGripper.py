@@ -1,25 +1,21 @@
-import odrive
-import numpy as np
-from odrive.enums import *
-from time import sleep
-from . import doControlCard
-from . import doControlCracker
+import sys
+import os
+current_dir = os.path.dirname(os.path.abspath(__file__)) # 예를들어 부모 디렉토리를 만든다면 parent_dir = os.path.join(current_dir, '..') 이렇게도 가능
+sys.path.append(current_dir)
+import doControlCard
+import doControlCracker
+import motorState
+from enums import MotorState
 
 ######## select control signal ########
-controlSignal = 'card'
+# controlSignal = 'card'
 # controlSignal = 'domino'
 # controlSignal = 'goStone'
-# controlSignal = 'cracker'
+controlSignal = 'cracker'
 # controlSignal = 'chip'
 # controlSignal = 'control_mode'
 # controlSignal = 'idle' # 완전 대기 상태
 #######################################
-
-SN_L0 = '384D34783539'
-SN_L1 = '383F34723539'
-SN_R0 = '3868345A3539'
-SN_R1 = '3866346F3539'
-
 
 def switchCase(case):
     if case == 'card':
@@ -38,19 +34,18 @@ def switchCase(case):
         print("[Case chip is selected]")
 
     elif case == 'control_mode':
-        print("[Now you can control the gripper]")
-        # mainControlGripper.SetControlState()
+        motorState.motorState(MotorState.CONTROL)
+        print("Now you can control the gripper...")
+
     elif case == 'idle' :
-        print("[Idle state, Next time you should set control state]")
-        # mainControlGripper.SetIdleState()
+        motorState.motorState(MotorState.IDLE)
+        print("For the operation, ensure the state is set to CONTROL mode...")
 
     else:
         print("Default case")
 
 # Gripper main is started
-# def mainGripper():
 def mainGripper():
+    count = 0
     print("[Gripper main...]")
     switchCase(controlSignal)
-
-# mainControlGripper = ScoopingObject(SN_L0, SN_L1, SN_R0, SN_R1)
