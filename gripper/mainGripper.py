@@ -10,15 +10,15 @@ import motorState
 from enums import MotorState
 
 ######## select control signal ########
-# controlSignal = 'card'
+controlSignal = 'card'
 # controlSignal = 'domino'
 # controlSignal = 'goStone'
 # controlSignal = 'cracker'
-controlSignal = 'chip'
+# controlSignal = 'chip'
 # controlSignal = 'control_mode'
 # controlSignal = 'idle' # 완전 대기 상태
 #######################################
-controlSignal = 0
+
 
 def switchCase(case):
     if case == 'card':
