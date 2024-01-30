@@ -3,7 +3,8 @@ from enums import MotorDriverSerialNumber
 from enums import MotorState
 
 def motorState(val):
-    state = ScoopingObject(MotorDriverSerialNumber.L0, MotorDriverSerialNumber.L1, MotorDriverSerialNumber.R0, MotorDriverSerialNumber.R1)
+    print(val)
+    state = ScoopingObject(MotorDriverSerialNumber.L0.value, MotorDriverSerialNumber.L1.value, MotorDriverSerialNumber.R0.value, MotorDriverSerialNumber.R1.value)
     if val == MotorState.CONTROL:
         print("CONTROL state")
         state.SetControlState()
