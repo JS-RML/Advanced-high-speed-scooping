@@ -49,7 +49,7 @@ class Actuator(object):
     @armed.setter
     def armed(self, val):
         if val:  # arm
-            self.axis.controller.config.input_mode = InputMode.PASSTHROUGH # INPUT_MODE_POS_FILTER
+            self.axis.controller.config.input_mode = InputMode.PASSTHROUGH
             self.axis.requested_state = AxisState.CLOSED_LOOP_CONTROL
         else:  # disarm
             self.axis.requested_state = AxisState.IDLE
@@ -77,3 +77,8 @@ class Actuator(object):
     @bandwidth.setter
     def bandwidth(self, val):
         self.axis.controller.config.input_filter_bandwidth = val
+
+    @property
+    def clearErrors(self):
+        self.odrv.clear_errors()
+        return self.axis.current_state is AxisState.IDLE
