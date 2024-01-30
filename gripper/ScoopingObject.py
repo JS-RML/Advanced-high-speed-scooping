@@ -10,15 +10,14 @@ class ScoopingObject(object):
                  serialNumberR0,
                  serialNumberR1):
 
-        self.serialNumberL0 = serialNumberL0
-        self.serialNumberL1 = serialNumberL1
-        self.serialNumberR0 = serialNumberR0
-        self.serialNumberR1 = serialNumberR1
-
         self.odrv0 = odrive.find_any(serial_number=serialNumberL0)
+        print(serialNumberL0)
         self.odrv1 = odrive.find_any(serial_number=serialNumberL1)
+        print(serialNumberL1)
         self.odrv2 = odrive.find_any(serial_number=serialNumberR0)
+        print(serialNumberR0)
         self.odrv3 = odrive.find_any(serial_number=serialNumberR1)
+        print(serialNumberR1)
 
         self.leftFinger0 = Actuator(self.odrv0, 0.966, 1, 45)
         self.leftFinger1 = Actuator(self.odrv1, 0.955, 1, 45)
@@ -29,13 +28,15 @@ class ScoopingObject(object):
         self.scoopingPosition = np.zeros(4)
         self.grabPosition = np.zeros(4)
 
+        print("Object is created")
+
 
     @property
     def StandbyPosition(self):
         return self.standbyPosition
 
     @property
-    def ScoopingPostion(self):
+    def ScoopingPosition(self):
         return self.scoopingPosition
 
     @property
@@ -47,8 +48,8 @@ class ScoopingObject(object):
         for i in range(0,4):
             self.standbyPosition[i] = setPoint[i]
 
-    @ScoopingPostion.setter
-    def ScoopingPostion(self, setPoint):
+    @ScoopingPosition.setter
+    def ScoopingPosition(self, setPoint):
         for i in range(0,4):
             self.scoopingPosition[i] = setPoint[i]
 
@@ -61,10 +62,7 @@ class ScoopingObject(object):
     def Move2StanbyPosition(self):
         # TODO 검증 필요함
         if self.leftFinger0.armed == 0 or self.leftFinger0.armed == 0 or self.rightFinger0.armed == 0 or self.rightFinger1.armed == 0:
-            self.leftFinger0.armed(1)
-            self.leftFinger1.armed(1)
-            self.rightFinger0.armed(1)
-            self.rightFinger1.armed(1)
+            self.SetControlState()
 
         # TODO 이 부분 actuator class 와 연결시키기
         self.odrv0.axis0.controller.input_pos = self.standbyPosition[0]
@@ -89,10 +87,7 @@ class ScoopingObject(object):
     def Move2GrabPosition(self):
         # TODO 검증 필요함
         if self.leftFinger0.armed == 0 or self.leftFinger0.armed == 0 or self.rightFinger0.armed == 0 or self.rightFinger1.armed == 0:
-            self.leftFinger0.armed(1)
-            self.leftFinger1.armed(1)
-            self.rightFinger0.armed(1)
-            self.rightFinger1.armed(1)
+            self.SetControlState()
         # TODO 이 부분 actuator class 와 연결시키기
         self.odrv0.axis0.controller.input_pos = self.grabPosition[0]
         self.odrv1.axis0.controller.input_pos = self.grabPosition[1]
@@ -110,13 +105,21 @@ class ScoopingObject(object):
         return tempArray
 
     def SetControlState(self):
-        self.leftFinger0.armed(True)
-        self.leftFinger1.armed(True)
-        self.rightFinger0.armed(True)
-        self.rightFinger1.armed(True)
+        self.ClearErrors()
+        self.leftFinger0.armed = True
+        self.leftFinger1.armed = True
+        self.rightFinger0.armed = True
+        self.rightFinger1.armed = True
 
     def SetIdleState(self):
-        self.leftFinger0.armed(False)
-        self.leftFinger1.armed(False)
-        self.rightFinger0.armed(False)
-        self.rightFinger1.armed(False)
+        self.ClearErrors()
+        self.leftFinger0.armed = False
+        self.leftFinger1.armed = False
+        self.rightFinger0.armed = False
+        self.rightFinger1.armed = False
+
+    def ClearErrors(self):
+        self.leftFinger0.clearErrors
+        self.leftFinger1.clearErrors
+        self.rightFinger0.clearErrors
+        self.rightFinger1.clearErrors
