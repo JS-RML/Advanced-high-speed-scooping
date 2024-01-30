@@ -6,13 +6,27 @@ from enums import FREQUANCY
 def doControlCard():
     count = 0
     print("[Case card is selected]")
-    card = ScoopingObject(MotorDriverSerialNumber.L0, MotorDriverSerialNumber.L1, MotorDriverSerialNumber.R0, MotorDriverSerialNumber.R1)
-    card.StandbyPosition(-0.051, 0.022, -0.057, 0.269)
-    card.ScoopingPostion(0.026, 0.016, 0.076, 0.266)
-    card.GrabPosition(0.032, 0.020, -0.152, 0.289)
+    card = ScoopingObject(MotorDriverSerialNumber.L0.value, MotorDriverSerialNumber.L1.value, MotorDriverSerialNumber.R0.value, MotorDriverSerialNumber.R1.value)
+    card.StandbyPosition = -0.089, 0.018, -0.044, 0.294
+    card.ScoopingPosition = 0.026, 0.016, 0.076, 0.226
+    card.GrabPosition = 0.032, 0.020, -0.152, 0.289
 
-    while(count < 1):
-        print("Card...",count)
+    # print(card.CurrentMotorEncoderValue)
+
+    card.Move2StanbyPosition
+    sleep(0.5)
+    # card.Move2ScoopingPosition
+    # sleep(0.5)
+    # card.Move2GrabPosition
+    # sleep(0.5)
+    # card.Move2ScoopingPosition
+
+    while(count < 5):
+        # print("Card...",count)
+        # user_input = input("아무 키를 입력하시오")
+        # if user_input:
+        #     break
         count += 1/FREQUANCY
         sleep(1/FREQUANCY)
 
+    card.SetIdleState()
