@@ -6,15 +6,17 @@ import doControlCard
 import doControlCracker
 import doContorlDomino
 import doContorlGostone
+import doGrpperMotion
 import motorState
 from enums import MotorState
 
 ######## select control signal ########
-controlSignal = 'card'
+# controlSignal = 'card'
 # controlSignal = 'domino'
 # controlSignal = 'goStone'
 # controlSignal = 'cracker'
 # controlSignal = 'chip'
+controlSignal = 'gripperMotion'
 # controlSignal = 'control_mode'
 # controlSignal = 'idle' # 완전 대기 상태
 #######################################
@@ -35,6 +37,9 @@ def switchCase(case):
 
     elif case == 'chip':
         print("[Case chip is selected]")
+
+    elif case == 'gripperMotion' :
+        doGrpperMotion.doGripperMotion()
 
     elif case == 'control_mode':
         motorState.motorState(MotorState.CONTROL)
