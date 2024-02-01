@@ -11,25 +11,19 @@ def doControlCard():
     card.ScoopingPosition = 0.046, -0.04, 0.12, 0.176
     card.GrabPosition = 0.046, -0.04, -0.136, 0.309
 
-    # print(card.CurrentMotorEncoderValue)
-
     card.Move2StanbyPosition
-    print("stanby position")
+    print("standby position")
     sleep(0.5)
     card.Move2ScoopingPosition
     print("scooping position")
     sleep(0.5)
-    # card.Move2GrabPosition
-    # print("Grab position")
-    # sleep(0.5)
-    # card.Move2ScoopingPosition
+
     tempEncoderVar = np.zeros(4)
     prevtempEncoderVar = np.zeros(4)
     encoderDifference = np.zeros(4)
     firstRun = True
 
     while(count < 3):
-
         # user_input = input("아무 키를 입력하시오")
         # if user_input:
         #     card.SetIdleState()
@@ -51,10 +45,8 @@ def doControlCard():
             pass
 
         print(encoderDifference)
-
         count += 1/FREQUANCY
         sleep(1/FREQUANCY)
         prevtempEncoderVar = tempEncoderVar
-
 
     card.SetIdleState()

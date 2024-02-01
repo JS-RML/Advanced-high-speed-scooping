@@ -12,18 +12,41 @@ def doControlCracker():
     cracker.GrabPosition = 0.032, 0.020, -0.152, 0.289
 
     cracker.Move2StanbyPosition
+    print("standby position")
     sleep(0.5)
     cracker.Move2ScoopingPosition
+    print("scooping position")
     sleep(0.5)
-    cracker.Move2GrabPosition
-    sleep(0.5)
-    cracker.Move2ScoopingPosition
 
-    while(count < 10):
-        print("Cracker...",count)
-        user_input = input("아무 키를 입력하시오")
-        if user_input:
-            cracker.SetIdleState()
-            break
+    tempEncoderVar = np.zeros(4)
+    prevtempEncoderVar = np.zeros(4)
+    encoderDifference = np.zeros(4)
+    firstRun = True
+
+    while(count < 3):
+        # user_input = input("아무 키를 입력하시오")
+        # if user_input:
+        #     cracker.SetIdleState()
+        #     break
+
+        tempEncoderVar = cracker.CurrentMotorEncoderValue
+
+        if firstRun:
+            prevtempEncoderVar = tempEncoderVar
+            firstRun = False
+        else:
+            pass
+
+        encoderDifference = abs(tempEncoderVar - prevtempEncoderVar)
+
+        if encoderDifference[0] > 0.005 or encoderDifference[1] > 0.005 :
+            cracker.Move2GrabPosition
+        else :
+            pass
+
+        print(encoderDifference)
         count += 1/FREQUANCY
         sleep(1/FREQUANCY)
+        prevtempEncoderVar = tempEncoderVar
+
+    cracker.SetIdleState()
