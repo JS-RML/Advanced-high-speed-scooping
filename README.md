@@ -29,6 +29,18 @@ Our software is implemented with **python3** and tested on **Ubuntu 20.04**.
   
 ## 3. Run High-Speed Scooping
 ### 3.1 Run with real robot
+1. You can run **main.py**.
+```shell
+python3 main.py
+```
+2. If you want to operate the RB5 and the gripper seperately
+```shell
+python3 RB5/mainRB5.py
+```
+or
+```shell
+python3 gripper/mainGripper.py
+```
 
 ### 3.2 Changing execution parameters
 
