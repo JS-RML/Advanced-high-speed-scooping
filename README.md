@@ -45,9 +45,10 @@ python3 gripper/mainGripper.py
 ### 3.2 Changing execution parameters
 
 **Gripper Dimenstions**
-- ***StandbyPosition*** : Waiting position of the finger and thumb(degree). It is a one-dimensional array with 4 elements L0, L1, R0 and R1
-- ***ScoopingPosition*** : Prescoop position of the finger and thumb(degree). It is a one-dimensional array with 4 elements L0, L1, R0 and R1
-- ***GrapPosition*** : Grab position of the finger and thumb(degree). It is a one-dimensional array with 4 elements L0, L1, R0 and R1
-- ***PrescoopStiffness*** : Position p-gain of finger and thumb before scoop(degree). It is a one-dimensional array with 4 elements L0, L1, R0 and R1
-- ***ScoopingStiffness*** : Position p-gain of finger and thumb for scooping(degree). It is a one-dimensional array with 4 elements L0, L1, R0 and R1
-- ***GraspingStiffness*** : Position p-gain of finger and thumb for grasping(degree). It is a one-dimensional array with 4 elements L0, L1, R0 and R1
+They are all a one-dimensional array with 4 elements L0, L1, R0 and R1 in order.
+- ***StandbyPosition*** : Waiting position of the finger and thumb(degree).
+- ***ScoopingPosition*** : Prescoop position of the finger and thumb(degree).
+- ***GrapPosition*** : Grab position of the finger and thumb(degree).
+- ***PrescoopStiffness*** : Position p-gain of finger and thumb before scoop(degree).
+- ***ScoopingStiffness*** : Position p-gain of finger and thumb for scooping(degree).
+- ***GraspingStiffness*** : Position p-gain of finger and thumb for grasping(degree).
