@@ -22,7 +22,10 @@
 ## 2. Prerequisites
 ### 2.1 Hardware
 - [**Rainbow robotics RB5-850**](https://www.rainbow-robotics.com/rb?gad_source=1&gclid=CjwKCAiAq4KuBhA6EiwArMAw1H8wNPbhSO7W_gAv-8gQMxyxffJRlo_nOqRpkLgsJm7VGlkmAHT8xRoChH0QAvD_BwE): Industrial Robot Arm 
-- [**Direct-Drive Hand (DDH)**](https://github.com/HKUST-RML/ddh_hardware)
+- [**Direct-Drive Gripper (DDG)**](https://github.com/chahyeonje/PNU-Direct-Drive-Gripper)
+
+### 2.2 Software
+Our software is implemented with **python3** and tested on **Ubuntu 20.04**.
   
 ## 3. Run High-Speed Scooping
 ### 3.1 Run with real robot
