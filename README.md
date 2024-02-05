@@ -52,3 +52,6 @@ python3 gripper/mainGripper.py
 - ***prescoopStiffness*** : Position p-gain of finger and thumb before scoop.
 - ***scoopingStiffness*** : Position p-gain of finger and thumb for scooping.
 - ***graspingStiffness*** : Position p-gain of finger and thumb for grasping).
+
+## Maintenance
+Hyeonje Cha(guswp3611@gmail.com) and Seunghwa Oh(seunghwa9118@pusan.ac.kr)
