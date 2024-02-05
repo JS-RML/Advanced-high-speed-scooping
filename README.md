@@ -12,8 +12,18 @@
 <img src="media/scoop_card_slope.gif" width="400"> 
 </p>
 
-## 2. Prerequisites
+**Related materials**
+- [**HKRML High-Speed-Scooping**](https://github.com/HKUST-RML/high_speed_scooping)
+- [**HKRML Direct-Drive Hand**](https://github.com/HKUST-RML/ddh_hardware)
+- [**PNU Direct-Drive Gripper**](https://github.com/chahyeonje/PNU-Direct-Drive-Gripper)
 
+### *High-Speed Scooping(tilted sideway)*
+
+## 2. Prerequisites
+### 2.1 Hardware
+- [**Rainbow robotics RB5-850**](https://www.rainbow-robotics.com/rb?gad_source=1&gclid=CjwKCAiAq4KuBhA6EiwArMAw1H8wNPbhSO7W_gAv-8gQMxyxffJRlo_nOqRpkLgsJm7VGlkmAHT8xRoChH0QAvD_BwE): Industrial Robot Arm 
+- [**Direct-Drive Hand (DDH)**](https://github.com/HKUST-RML/ddh_hardware)
+  
 ## 3. Run High-Speed Scooping
 ### 3.1 Run with real robot
 
