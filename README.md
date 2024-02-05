@@ -44,8 +44,8 @@ python3 gripper/mainGripper.py
 
 ### 3.2 Changing execution parameters
 
-**Gripper Dimenstions**
-They are all a one-dimensional array with 4 elements L0, L1, R0 and R1 in order.
+**Gripper Dimensions**
+(They are all a one-dimensional array with 4 elements L0, L1, R0 and R1 in order.)
 - ***StandbyPosition*** : Waiting position of the finger and thumb(degree).
 - ***ScoopingPosition*** : Prescoop position of the finger and thumb(degree).
 - ***GrapPosition*** : Grab position of the finger and thumb(degree).
