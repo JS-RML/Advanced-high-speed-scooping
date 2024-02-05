@@ -12,12 +12,12 @@
 <img src="media/scoop_card_slope.gif" width="400"> 
 </p>
 
+### *High-Speed Scooping(tilted sideway)*
+
 **Related materials**
 - [**HKRML High-Speed-Scooping**](https://github.com/HKUST-RML/high_speed_scooping)
 - [**HKRML Direct-Drive Hand**](https://github.com/HKUST-RML/ddh_hardware)
 - [**PNU Direct-Drive Gripper**](https://github.com/chahyeonje/PNU-Direct-Drive-Gripper)
-
-### *High-Speed Scooping(tilted sideway)*
 
 ## 2. Prerequisites
 ### 2.1 Hardware
@@ -32,4 +32,8 @@ Our software is implemented with **python3** and tested on **Ubuntu 20.04**.
 
 ### 3.2 Changing execution parameters
 
-
+**Gripper Dimenstions**
+- ***StandbyPosition***: Waiting position of the finger and thumb(degree).
+- ***ScoopingPosition***: Prescoop position of the finger and thumb(degree). It is a one-dimensional array with 4 elements L0, L1, R0 and R1
+- ***GrapPosition***
+- 
