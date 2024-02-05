@@ -37,7 +37,7 @@ python3 main.py
 ```shell
 python3 RB5/mainRB5.py
 ```
-   or
+>>>or
 ```shell
 python3 gripper/mainGripper.py
 ```
