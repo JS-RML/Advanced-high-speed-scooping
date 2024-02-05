@@ -37,9 +37,7 @@ python3 main.py
 ```shell
 python3 RB5/mainRB5.py
 ```
-<div style="margin-left: 20px;">
 or
-</div>
 ```shell
 python3 gripper/mainGripper.py
 ```
