@@ -1,7 +1,6 @@
 from time import sleep
 from ScoopingObject import *
 from enums import MotorDriverSerialNumber
-from enums import FREQUANCY
 
 def doGripperMotion():
     print("[Case gripper-motion is selected]")
@@ -26,8 +25,5 @@ def doGripperMotion():
     motion.Move2ArbitraryPosition3
     sleep(0.7)
 
-    # motion.TunningGain = 10, 10, 10, 10, 0.1, 0.1, 0.1, 0.1
 
-    user_input = input("아무 키를 입력하시오")
-    if user_input:
-        motion.SetIdleState()
+    motion.SetIdleState()
