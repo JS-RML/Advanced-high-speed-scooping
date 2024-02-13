@@ -8,7 +8,11 @@ class Actuator(object):
         self.encoder_offset = encoder_offset
         self.direction = direction
         self.link_offset = link_offset
-        self.setPointOffset = encoder_offset - 1
+        if(self.encoder_offset > 0.5) :
+            self.setPointOffset = encoder_offset - 1
+        else :
+            self.setPointOffset = encoder_offset
+
 
     @property
     def encoder(self):
@@ -78,7 +82,5 @@ class Actuator(object):
     def bandwidth(self, val):
         self.axis.controller.config.input_filter_bandwidth = val
 
-    @property
     def clearErrors(self):
         self.odrv.clear_errors()
-        return self.axis.current_state is AxisState.IDLE
