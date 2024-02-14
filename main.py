@@ -1,16 +1,13 @@
 import threading
-from gripper import mainGripper
+from GRIPPER import mainGripper
 from RB5 import mainRB5
-import sys
-import os
-current_dir = os.path.dirname(os.path.abspath(__file__))
 
 def threadGripper():
-    print("[Gripper thread...]")
+    print("[GRIPPER THREAD]")
     mainGripper.mainGripper()
 
 def threadRB5():
-    print("[RB5 thread...]")
+    print("[RB5 THREAD]")
     mainRB5.mainRB5()
 
 if __name__ == "__main__":

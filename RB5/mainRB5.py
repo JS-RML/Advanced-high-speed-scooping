@@ -24,22 +24,14 @@ def mainRB5():
     cobot.CobotInit()
     cobot.SetProgramMode(cobot.PG_MODE.REAL)
     cobot.MoveL(x=123.76, y=-448.94, z=304.20, rx=-139.6, ry=22.8, rz=67.3, spd=-1, acc=-1)
-    # sleep(0.5)
-    # cobot.MoveL(x=123.76, y=-448.94, z=403.26, rx=-139.6, ry=22.8, rz=67.3, spd=-1, acc=-1)
-    # sleep(0.5)
-    # cobot.MoveL(x=123.76, y=-448.94, z=304.20, rx=-139.6, ry=22.8, rz=67.3, spd=-1, acc=-1)
-    # sleep(0.5)
-    # cobot.MoveL(x=123.76, y=-448.94, z=403.26, rx=-139.6, ry=22.8, rz=67.3, spd=-1, acc=-1)
-    # sleep(0.5)
-    # cobot.MoveL(x=123.76, y=-448.94, z=304.20, rx=-139.6, ry=22.8, rz=67.3, spd=-1, acc=-1)
-    # sleep(2.5)
-    #
-    # disconnectngRB5()
+    sleep(0.5)
+    cobot.MoveL(x=123.76, y=-448.94, z=403.26, rx=-139.6, ry=22.8, rz=67.3, spd=-1, acc=-1)
+    sleep(0.5)
+    cobot.MoveL(x=123.76, y=-448.94, z=304.20, rx=-139.6, ry=22.8, rz=67.3, spd=-1, acc=-1)
+    sleep(0.5)
+    cobot.MoveL(x=123.76, y=-448.94, z=403.26, rx=-139.6, ry=22.8, rz=67.3, spd=-1, acc=-1)
+    sleep(0.5)
+    cobot.MoveL(x=123.76, y=-448.94, z=304.20, rx=-139.6, ry=22.8, rz=67.3, spd=-1, acc=-1)
+    sleep(2.5)
 
-    # while(count <= 5):
-    #     count += 1/FREQUANCY
-    #     print("RB5...", count)
-    #     sleep(1/FREQUANCY)
-
-    # signal.signal(signal.SIGTSTP, cleanup_before_exit)
-
+    disconnectngRB5()
