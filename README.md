@@ -11,7 +11,7 @@
 
 ### *High-Speed Scooping(slope)*
 <p align = "center">
-<img src="media/slope_card.gif" width="400">
+<img src="media/slope_card_.gif" width="400">
 <img src="media/slope_envelope_.gif" width="400">
 </p>
 
