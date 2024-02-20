@@ -11,8 +11,13 @@
 
 ### *High-Speed Scooping(slope)*
 <p align = "center">
-<img src="media/slope_chip.gif" width="400">
+<img src="media/slope_card.gif" width="400">
 <img src="media/slope_envelope.gif" width="400">
+</p>
+
+### *High-Speed Scooping(slope-diffrent angles)*
+<p align = "center">
+<img src="media/slope_card_15degree.gif" width="400"> 
 </p>
 
 ### *High-Speed Scooping(tilted sideway)*
