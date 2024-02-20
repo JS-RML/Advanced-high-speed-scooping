@@ -4,7 +4,7 @@
 
 ### *High-Speed Scooping*
 <p align = "center">
-<img src="media/card_.gif" width="450"> 
+<img src="media/card_.gif" width="400"> 
 <img src="media/envelope.gif" width="400"> 
 </p>
 
