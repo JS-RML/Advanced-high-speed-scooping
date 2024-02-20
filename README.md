@@ -9,12 +9,9 @@
 
 
 ### *High-Speed Scooping(slope)*
-<p align = "left">
-<img src="media/slope_chip.gif" width="400"> 
-</p>
-
-<p align = "right">
-<img src="media/slope_envelope.gif" width="400"> 
+<p align = "center">
+<img src="media/slope_chip.gif" width="400">
+<img src="media/slope_envelope.gif" width="400">
 </p>
 
 ### *High-Speed Scooping(tilted sideway)*
