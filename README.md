@@ -9,11 +9,11 @@
 
 
 ### *High-Speed Scooping(slope)*
-<p align = "center">
+<p align = "left">
 <img src="media/slope_chip.gif" width="400"> 
 </p>
 
-<p align = "center">
+<p align = "right">
 <img src="media/slope_envelope.gif" width="400"> 
 </p>
 
