@@ -7,9 +7,14 @@
 <img src="media/scoop_card.gif" width="400"> 
 </p>
 
+
 ### *High-Speed Scooping(slope)*
 <p align = "center">
-<img src="media/scoop_card_slope.gif" width="400"> 
+<img src="media/slope_chip.gif" width="400"> 
+</p>
+
+<p align = "center">
+<img src="media/slope_envelope.gif" width="400"> 
 </p>
 
 ### *High-Speed Scooping(tilted sideway)*
