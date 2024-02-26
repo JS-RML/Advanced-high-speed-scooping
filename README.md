@@ -1,7 +1,7 @@
 # PNU-High-Speed-Scooping
 
 ## 1. Overview
-
+본 레포지토리에서는 납작한 물체를 집기 위한 조작 기법 중 하나인 high speed scooping 을 구현했다. HKST 의 HSS 에 대한 아이디어를 기반으로 조금 더 다양한 환경에서 해당 기법을 수행했다. 평면뿐 아니라 경사면, 옆쪽으로 틸트된 경사면에서도 실험을 진행하여 해당 기법이 국한된 특수한 조건 아래에서가 아닌, 다양한 환경에서 널리 활용될 수 있음을 보였다.
 ### *High-Speed Scooping*
 <p align = "center">
 <img src="media/card_.gif" width="400"> 
