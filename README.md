@@ -21,7 +21,17 @@ The repository implemented a manipulation technique for picking up flat objects 
 <img src="media/slope_card45.gif" width="400">
 </p>
 
-### *High-Speed Scooping(tilted sideway)*
+### *High-Speed Scooping(slope-sideway)*
+<p align = "center">
+<img src="media/sideway_card.gif" width="400">
+<img src="media/sideway_domino.gif" width="400">
+</p>
+
+### *High-Speed Scooping(slope-tilted)*
+<p align = "center">
+<img src="media/tilted_card.gif" width="400">
+<img src="media/tilted_domino.gif" width="400">
+</p>
 
 **Related materials**
 - [**HKRML High-Speed-Scooping**](https://github.com/HKUST-RML/high_speed_scooping)
