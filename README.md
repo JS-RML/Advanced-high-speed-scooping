@@ -27,7 +27,7 @@ The repository implemented a manipulation technique for picking up flat objects 
 <img src="media/sideway_domino.gif" width="400">
 </p>
 
-### *High-Speed Scooping(slope-tilted)*
+### *High-Speed Scooping(slope-tilted + passive joint finger tip)*
 <p align = "center">
 <img src="media/tilted_card.gif" width="400">
 <img src="media/tilted_domino.gif" width="400">
