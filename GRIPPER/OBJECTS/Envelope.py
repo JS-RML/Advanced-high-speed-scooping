@@ -3,8 +3,8 @@ from time import sleep
 from GRIPPER import Gripper
 from GRIPPER.Gripper import FREQUENCY
 
-def ScoopingCard():
-    print("   [GRIPPER/ CARD]")
+def ScoopingEnvelope():
+    print("   [GRIPPER/ ENVELOPE]")
 
     timeStep = 0.0
     firstRun = True
@@ -12,13 +12,13 @@ def ScoopingCard():
     prevtempEncoderVar = np.zeros(4)
     encoderDifference = np.zeros(4)
 
-    scoopingPosition = [41, 16, 24, -37]
+    scoopingPosition = [43, 24, 35, -46]
     grabPosition = [45, 10, -35, -17]
 
     Gripper.SetControlState()
     Gripper.SetMotorPosition(scoopingPosition)
     sleep(1.0)
-    Gripper.SetStiffness([30,30,30,30])
+    Gripper.SetStiffness([30,10,30,30])
     Gripper.SetVelocityGain([0.3,0.1,0.1,0.1])
 
     while(timeStep < 3):
@@ -35,7 +35,7 @@ def ScoopingCard():
 
         encoderDifference = abs(tempEncoderVar - prevtempEncoderVar)
 
-        if encoderDifference[0] > 0.01 or encoderDifference[1] > 0.01:
+        if encoderDifference[0] > 0.005 or encoderDifference[1] > 0.005:
             Gripper.SetStiffness([30,30,30,30])
             Gripper.SetVelocityGain([0.3, 0.3, 0.3, 0.3])
 

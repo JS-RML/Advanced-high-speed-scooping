@@ -1,3 +1,7 @@
+import sys
+import os
+current_dir_gripper = os.path.dirname(os.path.abspath(__file__)) # 예를들어 부모 디렉토리를 만든다면 parent_dir = os.path.join(current_dir, '..') 이렇게도 가능
+sys.path.append(current_dir_gripper)
 import numpy as np
 import odrive
 from Actuator import *
@@ -18,6 +22,9 @@ LF0 = Actuator(odrv0, 0.966, 1, 45) # left finger
 LF1 = Actuator(odrv1, 0.955, 1, 45)
 RF0 = Actuator(odrv2, 0.977, 1, 45) # right finger
 RF1 = Actuator(odrv3, 0.338, 1, 45)
+
+sharedTimeList = []
+sharedPositionList = []
 
 def ClearErrors():
     LF0.clearErrors()
@@ -82,8 +89,8 @@ def SetControlState():
     LF1.armed = True
     RF0.armed = True
     RF1.armed = True
-    SetStiffness([20, 20, 20, 20])
-    SetVelocityGain([0.2, 0.2, 0.2, 0.2])
+    SetStiffness([30, 30, 30, 30])
+    SetVelocityGain([0.3, 0.3, 0.3, 0.3])
     print("      [GRIPPER/ CONTROL STATE]")
 
 def SetIdleState():

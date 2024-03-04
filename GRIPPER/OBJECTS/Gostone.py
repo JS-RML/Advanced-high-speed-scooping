@@ -18,7 +18,10 @@ def ScoopingGostone():
     Gripper.SetMotorPosition(scoopingPosition)
     sleep(0.5)
 
-    while(timeStep < 10):
+    while(timeStep < 5):
+        Gripper.sharedTimeList.append(timeStep)
+        Gripper.sharedPositionList.append(Gripper.GetMotorPosition()[0])
+
         tempEncoderVar = Gripper.GetEncoderValue()
 
         if(firstRun):

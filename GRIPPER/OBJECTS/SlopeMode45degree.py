@@ -12,16 +12,19 @@ def ScoopingCard():
     prevtempEncoderVar = np.zeros(4)
     encoderDifference = np.zeros(4)
 
-    scoopingPosition = [41, 16, 24, -37]
-    grabPosition = [45, 10, -35, -17]
+    scoopingPosition = [43, 14, 43, -47]
+    grabPosition = [45, 10, -45, -5]
 
     Gripper.SetControlState()
     Gripper.SetMotorPosition(scoopingPosition)
     sleep(1.0)
-    Gripper.SetStiffness([30,30,30,30])
-    Gripper.SetVelocityGain([0.3,0.1,0.1,0.1])
+    # Gripper.SetStiffness([30,10,30,30])
+    # Gripper.SetVelocityGain([0.3,0.1,0.3,0.3])
 
-    while(timeStep < 3):
+    Gripper.SetStiffness([5,5,10,10])
+    Gripper.SetVelocityGain([0.05,0.05,0.1,0.1])
+
+    while(timeStep < 2):
         Gripper.sharedTimeList.append(timeStep)
         Gripper.sharedPositionList.append(Gripper.GetMotorPosition()[0])
 
@@ -35,9 +38,9 @@ def ScoopingCard():
 
         encoderDifference = abs(tempEncoderVar - prevtempEncoderVar)
 
-        if encoderDifference[0] > 0.01 or encoderDifference[1] > 0.01:
-            Gripper.SetStiffness([30,30,30,30])
-            Gripper.SetVelocityGain([0.3, 0.3, 0.3, 0.3])
+        if encoderDifference[0] > 0.005 or encoderDifference[1] > 0.005:
+            Gripper.SetStiffness([5,5,10,10])
+            Gripper.SetVelocityGain([0.05, 0.05, 0.1, 0.1])
 
             Gripper.SetMotorPosition(grabPosition)
         else :

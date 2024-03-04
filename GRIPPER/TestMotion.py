@@ -1,7 +1,7 @@
 from time import sleep
 import numpy as np
 import Gripper
-
+from GRIPPER.Gripper import FREQUENCY
 def TestMotion():
     print("   [GRIPPER/ TEST MOTION]")
 
