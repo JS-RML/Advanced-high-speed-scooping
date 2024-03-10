@@ -1,5 +1,4 @@
 import threading
-
 import GRIPPER.Gripper
 from GRIPPER import mainGripper
 from RB5 import mainRB5
@@ -26,6 +25,7 @@ if __name__ == "__main__":
     thread1.join()
     thread2.join()
 
+    # 아래는 전부 결과 그래프 관련 코드임. 제어와는 상관없음.
     # 데이터프레임 생성
     df = pd.DataFrame({'Time': GRIPPER.Gripper.sharedTimeList, 'Value': GRIPPER.Gripper.sharedPositionList})
 

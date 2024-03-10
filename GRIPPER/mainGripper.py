@@ -9,14 +9,6 @@ import OBJECTS.DominoBlock
 import OBJECTS.Gostone
 import OBJECTS.Seaweed
 import OBJECTS.Envelope
-import OBJECTS.SlopeMode1
-import OBJECTS.SlopeMode2
-import OBJECTS.SlopeMode3
-import OBJECTS.SlopeMode4
-import OBJECTS.SlopeMode5
-import OBJECTS.SlopeMode6
-import OBJECTS.SlopeMode7
-import OBJECTS.SlopeMode45degree
 import OBJECTS.tilted
 import TestMotion
 
@@ -28,23 +20,14 @@ controlSignal = 'card'
 # controlSignal = 'chip'
 # controlSignal = 'envelope'
 # controlSignal = 'seaweed'
-# controlSignal = 'slopeCard'
-# controlSignal = 'slopeDomino'
-# controlSignal = 'slopGoStone'
-# controlSignal = 'slopeCracker'
-# controlSignal = 'slopeChip'
-# controlSignal = 'slopeSeaweed'
-# controlSignal = 'slopeEnvelope'
-# controlSignal = 'slope45degree'
 # controlSignal = 'testMotion'
-# controlSignal = 'tilted' #domino test 중
-# controlSignal = 'control_mode'
-# controlSignal = 'idle' # 완전 대기 상태
+# controlSignal = 'tilted'
 #######################################
 
 def switchCase(case):
     if case == 'card':
-        OBJECTS.Card.ScoopingCard()
+        # OBJECTS.Card.ScoopingCard()
+        OBJECTS.Card.ScoopingCardSlope()
 
     elif case == 'domino':
         OBJECTS.DominoBlock.ScoopingDominoBlock()
@@ -66,30 +49,6 @@ def switchCase(case):
 
     elif case == 'testMotion':
         TestMotion.TestMotion()
-
-    elif case == 'slopeCard':
-        OBJECTS.SlopeMode1.SlopeCard() #todo 파일명에 card 들어가면 경로를 card.py  잡음...
-
-    elif case == 'slopeDomino':
-        OBJECTS.SlopeMode2.SlopeDomino()
-
-    elif case == 'slopGoStone':
-        OBJECTS.SlopeMode3.SlopeGoStone()
-
-    elif case == 'slopeCracker':
-        OBJECTS.SlopeMode4.SlopeCracker()
-
-    elif case == 'slopeChip':
-        OBJECTS.SlopeMode5.SlopeChip()
-
-    elif case == 'slopeSeaweed':
-        OBJECTS.SlopeMode6.SlopeSeaweed()
-
-    elif case == 'slopeEnvelope':
-        OBJECTS.SlopeMode7.SlopeEnvelope()
-
-    elif case == 'slope45degree':
-        OBJECTS.SlopeMode45degree.ScoopingCard()
 
     elif case == 'tilted':
         OBJECTS.tilted.tiltScooping()
