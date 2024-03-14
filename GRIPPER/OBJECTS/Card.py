@@ -67,8 +67,8 @@ def ScoopingCardSlope():
     Gripper.SetControlState()
     Gripper.SetMotorPosition(scoopingPosition)
     sleep(1.0)
-    Gripper.SetStiffness([20,10,30,30])
-    Gripper.SetVelocityGain([0.1,0.1,0.1,0.1])
+    Gripper.SetStiffness([30,30,30,30])
+    Gripper.SetVelocityGain([0.3,0.1,0.1,0.1])
 
     while(timeStep < 3):
         Gripper.sharedTimeList.append(timeStep)
@@ -85,8 +85,8 @@ def ScoopingCardSlope():
         encoderDifference = abs(tempEncoderVar - prevtempEncoderVar)
 
         if encoderDifference[0] > 0.005 or encoderDifference[1] > 0.005:
-            Gripper.SetStiffness([20,20,30,30])
-            Gripper.SetVelocityGain([0.2, 0.2, 0.2, 0.2])
+            Gripper.SetStiffness([30,30,30,30])
+            Gripper.SetVelocityGain([0.3, 0.3, 0.3, 0.3])
 
             Gripper.SetMotorPosition(grabPosition)
         else :
