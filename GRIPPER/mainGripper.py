@@ -12,15 +12,16 @@ import OBJECTS.Envelope
 import OBJECTS.tilted
 import TestMotion
 
+
 ######## select control signal ########
-controlSignal = 'card'
+# controlSignal = 'card'
 # controlSignal = 'domino'
 # controlSignal = 'goStone'
 # controlSignal = 'cracker'
 # controlSignal = 'chip'
 # controlSignal = 'envelope'
 # controlSignal = 'seaweed'
-# controlSignal = 'testMotion'
+controlSignal = 'testMotion'
 # controlSignal = 'tilted'
 #######################################
 
@@ -48,7 +49,7 @@ def switchCase(case):
         OBJECTS.Envelope.ScoopingEnvelope()
 
     elif case == 'testMotion':
-        TestMotion.TestMotion()
+        TestMotion.TestCurrent()
 
     elif case == 'tilted':
         OBJECTS.tilted.tiltScooping()

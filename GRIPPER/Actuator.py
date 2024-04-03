@@ -82,5 +82,8 @@ class Actuator(object):
     def bandwidth(self, val):
         self.axis.controller.config.input_filter_bandwidth = val
 
+    def iBusValue(self):
+        return self.odrv.ibus
+
     def clearErrors(self):
         self.odrv.clear_errors()

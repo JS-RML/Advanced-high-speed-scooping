@@ -25,6 +25,7 @@ RF1 = Actuator(odrv3, 0.338, 1, 45)
 
 sharedTimeList = []
 sharedPositionList = []
+sharedData = 0
 
 def ClearErrors():
     LF0.clearErrors()
@@ -54,6 +55,14 @@ def GetVelocityGains():
     tempArray[1] = LF1.vel_gain
     tempArray[2] = RF0.vel_gain
     tempArray[3] = RF1.vel_gain
+    return tempArray
+
+def GetCurrent():
+    tempArray = np.zeros(4)
+    tempArray[0] = LF0.iBusValue()
+    tempArray[1] = LF1.iBusValue()
+    tempArray[2] = RF0.iBusValue()
+    tempArray[3] = RF1.iBusValue()
     return tempArray
 
 def GetEncoderValue():
