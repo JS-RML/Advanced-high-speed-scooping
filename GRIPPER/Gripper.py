@@ -25,6 +25,7 @@ RF1 = Actuator(odrv3, 0.338, 1, 45)
 
 sharedTimeList = []
 sharedPositionList = []
+
 sharedData = 0
 
 def ClearErrors():

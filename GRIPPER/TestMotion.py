@@ -25,13 +25,13 @@ def TestCurrent():
     Gripper.SetStiffness([30,30,30,30])
     Gripper.SetVelocityGain([0.3,0.3,0.3,0.3])
 
-    while(timeStep < 3):
+    while(timeStep < 30):
 
-        print(Gripper.GetCurrent())
-        Gripper.sharedData = Gripper.GetCurrent()[0]
+        # print(Gripper.GetCurrent())
+        # Gripper.sharedData = 3
+
         timeStep += 1/FREQUENCY
         sleep(1/FREQUENCY)
-
 
     Gripper.SetIdleState()
 

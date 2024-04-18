@@ -14,21 +14,21 @@ import TestMotion
 
 
 ######## select control signal ########
-# controlSignal = 'card'
+controlSignal = 'card'
 # controlSignal = 'domino'
 # controlSignal = 'goStone'
 # controlSignal = 'cracker'
 # controlSignal = 'chip'
 # controlSignal = 'envelope'
 # controlSignal = 'seaweed'
-controlSignal = 'testMotion'
+# controlSignal = 'testMotion'
 # controlSignal = 'tilted'
 #######################################
 
 def switchCase(case):
     if case == 'card':
-        # OBJECTS.Card.ScoopingCard()
-        OBJECTS.Card.ScoopingCardSlope()
+        OBJECTS.Card.ScoopingCard()
+        # OBJECTS.Card.ScoopingCardSlope()
 
     elif case == 'domino':
         OBJECTS.DominoBlock.ScoopingDominoBlock()
