@@ -12,8 +12,9 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 from matplotlib.animation import FuncAnimation
 from datetime import datetime, timedelta
-
-
+import csv
+import time
+from datetime import datetime
 # class MyMplCanvas(FigureCanvas):
 #     def __init__(self, parent=None, width=5, height=4, dpi=100):
 #         fig = Figure(figsize=(width, height), dpi=dpi)
@@ -66,8 +67,8 @@ class MyMplCanvas(FigureCanvas):
         self.fig = Figure(figsize=(10, 8), dpi=100)
         self.axes1 = self.fig.add_subplot(221, title="L0")
         self.axes2 = self.fig.add_subplot(222, title="L1")
-        self.axes3 = self.fig.add_subplot(223, title="R0")
-        self.axes4 = self.fig.add_subplot(224, title="R1")
+        # self.axes3 = self.fig.add_subplot(223, title="R0")
+        # self.axes4 = self.fig.add_subplot(224, title="R1")
         self.fig.suptitle("Motor Current", fontsize=16)
         super(MyMplCanvas, self).__init__(self.fig)
 
@@ -78,18 +79,20 @@ class MyWindow(QMainWindow):
         self.setCentralWidget(self.canvas)
 
         self.start_time = datetime.now()
-        self.max_points = 50
-        self.x_data = [[] for _ in range(4)]
-        self.y_data = [[] for _ in range(4)]
-        self.y_limit = [0.5] * 4  # 초기 y축 범위 설정
+        self.max_points = 1000
+        self.x_data = [[] for _ in range(2)]
+        self.y_data = [[] for _ in range(2)]
+        self.y_limit = [0.5] * 2  # 초기 y축 범위 설정
 
-        self.animation = FuncAnimation(self.canvas.fig, self.update_plot, interval=50)
+        self.animation = FuncAnimation(self.canvas.fig, self.update_plot, interval=10)
         self.canvas.mpl_connect('scroll_event', self.on_scroll)
+
 
     def update_plot(self, frame):
         current_time = datetime.now()
         elapsed_time = (current_time - self.start_time).total_seconds()
-        for i in range(4):
+
+        for i in range(2):
             y_value = Gripper.GetCurrent()[i]  # 임의의 y값 생성
             self.x_data[i].append(elapsed_time)
             self.y_data[i].append(y_value)
@@ -105,6 +108,45 @@ class MyWindow(QMainWindow):
             ax.figure.autofmt_xdate()
 
         self.canvas.draw()
+
+        self.save_data_to_csv('log/csv')
+
+
+    def save_data_to_csv(self, file_name):
+        """Save the current x and y data to a CSV file."""
+
+        with open(file_name, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            # Write header
+            header = ['Time_1', 'Value_1', 'Time_2', 'Value_2']
+            writer.writerow(header)
+
+            # Find the maximum length of any x_data list
+            # max_len = max(len(x) for x in self.x_data)
+            #
+            # Write each row of data
+            # for i in range(max_len):
+            #     row = []
+            #     for x, y in zip(self.x_data, self.y_data):
+            #         if i < len(x):
+            #             row.extend([x[i], y[i]])
+            #         else:
+            #             row.extend([None, None])  # Placeholder for missing data
+            #     writer.writerow(row)
+
+            # y[0], y[1]
+            max_len = max(len(self.x_data[0]), len(self.x_data[1]))
+
+            for i in range(max_len):
+                row = []
+                for x, y in zip(self.x_data[:2], self.y_data[:2]):
+                    if i < len(x):
+                        row.extend([x[i], y[i]])
+                    else:
+                        row.extend([None, None])  # Placeholder for missing data
+                writer.writerow(row)
+
+
 
     def on_scroll(self, event):
         zoom_factor = 0.1  # 확대/축소 인자
@@ -131,11 +173,14 @@ if __name__ == "__main__":
     thread1.start()
     thread2.start()
 
-    app = QApplication(sys.argv)
-    window = MyWindow()
+    # app = QApplication(sys.argv)
+    # window = MyWindow()
+
     # window = MultiGraphWindow()
-    window.show()
-    app.exec_()
+
+    # window.show()
+    # app.exec_()
+    #
     # sys.exit(app.exec_())
 
     # 모든 스레드가 종료될 때까지 기다림

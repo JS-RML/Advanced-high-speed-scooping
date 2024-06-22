@@ -23,15 +23,24 @@ controlSignal = 'card'
 # controlSignal = 'seaweed'
 # controlSignal = 'testMotion'
 # controlSignal = 'tilted'
-#######################################
+######################################
 
 def switchCase(case):
     if case == 'card':
-        OBJECTS.Card.ScoopingCard()
+        # OBJECTS.Card.ScoopingCard_photo()
+        OBJECTS.Card.ScoopingCard0()
+        # OBJECTS.Card.ScoopingCard1()
+        # OBJECTS.Card.ScoopingCard2()
+        # OBJECTS.Card.ScoopingCard_noF0()
+        # OBJECTS.Card.ScoopingCard_noF1()
+        # OBJECTS.Card.ScoopingCard_noF2()
         # OBJECTS.Card.ScoopingCardSlope()
+        # OBJECTS.Card.ScoopingCardRollOnly()
+        # OBJECTS.Card.ScoopingCardRollOnlySwivel()
 
     elif case == 'domino':
-        OBJECTS.DominoBlock.ScoopingDominoBlock()
+        # OBJECTS.DominoBlock.ScoopingDominoBlock()
+        OBJECTS.DominoBlock.ScoopingDominoBlockTilted()
 
     elif case == 'goStone':
         OBJECTS.Gostone.ScoopingGostone()
@@ -46,10 +55,12 @@ def switchCase(case):
         OBJECTS.Seaweed.ScoopingSeaweed()
 
     elif case == 'envelope':
-        OBJECTS.Envelope.ScoopingEnvelope()
+            OBJECTS.Envelope.ScoopingEnvelope()
 
     elif case == 'testMotion':
-        TestMotion.TestCurrent()
+        TestMotion.TestGetEncoder()
+        # TestMotion.TestMotion()
+        # TestMotion.TestMotionStop()
 
     elif case == 'tilted':
         OBJECTS.tilted.tiltScooping()

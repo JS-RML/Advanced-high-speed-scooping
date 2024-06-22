@@ -17,8 +17,6 @@ def tiltScooping():
     grabPosition = [45, 15, -25, -10]
     # grabPosition = [46, 22, -17, -13]
 
-
-
     Gripper.SetControlState()
     Gripper.SetMotorPosition(scoopingPosition)
     sleep(1.0)
