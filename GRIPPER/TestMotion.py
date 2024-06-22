@@ -6,13 +6,8 @@ from GRIPPER.Gripper import FREQUENCY
 def TestGetEncoder():
     print("   [GRIPPER/ TEST MOTION]")
 
-
-
     Gripper.SetControlState()
     print(Gripper.GetMotorPosition())
-
-    # 44, 23, -41, -16 모음
-    # -36, 97, 49, -111 벌림
 
     Gripper.SetIdleState()
 
@@ -31,7 +26,6 @@ def TestCurrent():
 
         # print(Gripper.GetCurrent())
         # Gripper.sharedData = 3
-
         timeStep += 1/FREQUENCY
         sleep(1/FREQUENCY)
 
@@ -94,8 +88,4 @@ def TestMotionStop():
     Gripper.SetVelocityGain([0.15,0.15,0.15,0.15])
 
     Gripper.SetMotorPosition(position1)
-
-    # 44, 23, -41, -16 모음
-    # -36, 97, 49, -111 벌림
-
     # Gripper.SetIdleState()
