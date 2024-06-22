@@ -8,18 +8,35 @@ class Actuator(object):
         self.encoder_offset = encoder_offset
         self.direction = direction
         self.link_offset = link_offset
+        if(self.encoder_offset > 0.5) :
+            self.setPointOffset = encoder_offset - 1
+        else :
+            self.setPointOffset = encoder_offset
+
 
     @property
     def encoder(self):
-        return self.odrv.encoder_estimator1.pos_estimate
+        posEstimate = self.odrv.encoder_estimator1.pos_estimate
+
+        if posEstimate > 0.5 :
+            calibratedEncoder = posEstimate - 1.0
+        else :
+            calibratedEncoder = posEstimate
+
+        return calibratedEncoder
 
     @property
     def motor_pos(self):
-        return 360 * self.direction * (self.odrv.encoder_estimator1.pos_estimate - self.encoder_offset)
+        tempEncoderValue = self.odrv.encoder_estimator1.pos_estimate
+        if tempEncoderValue > 0.5 :
+            return 360 * (tempEncoderValue - 1 - self.setPointOffset)
+        else :
+            return 360 * (tempEncoderValue - self.setPointOffset)
 
     @motor_pos.setter
-    def motor_pos(self, setpoint):
-        self.axis.controller.input_pos = (setpoint / 360.) * self.direction + self.encoder_offset
+    def motor_pos(self, desiredMotorPosition):
+        desiredSetPoint = desiredMotorPosition / 360 + self.setPointOffset
+        self.axis.controller.input_pos = desiredSetPoint
 
     @property
     def theta(self):
@@ -31,15 +48,15 @@ class Actuator(object):
 
     @property
     def armed(self):
-        return self.axis.current_state is AXIS_STATE_CLOSED_LOOP_CONTROL
+        return self.axis.current_state is AxisState.CLOSED_LOOP_CONTROL
 
     @armed.setter
     def armed(self, val):
         if val:  # arm
-            self.axis.controller.config.input_mode = INPUT_MODE_POS_FILTER  # INPUT_MODE_PASSTHROUGH
-            self.axis.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
+            self.axis.controller.config.input_mode = InputMode.PASSTHROUGH
+            self.axis.requested_state = AxisState.CLOSED_LOOP_CONTROL
         else:  # disarm
-            self.axis.requested_state = AXIS_STATE_IDLE
+            self.axis.requested_state = AxisState.IDLE
 
     @property
     def stiffness(self):
@@ -64,3 +81,9 @@ class Actuator(object):
     @bandwidth.setter
     def bandwidth(self, val):
         self.axis.controller.config.input_filter_bandwidth = val
+
+    def iBusValue(self):
+        return self.odrv.ibus
+
+    def clearErrors(self):
+        self.odrv.clear_errors()
