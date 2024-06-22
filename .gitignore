@@ -1,8 +1,8 @@
 /.idea
 /.python-version
+
 /GRIPPER/.python-version
 /GRIPPER/__pycache__
 /GRIPPER/OBJECTS/__pycache__
 /RB5/__pycache__
 /__pycache__
-
