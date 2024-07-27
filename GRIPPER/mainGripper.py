@@ -9,7 +9,6 @@ import OBJECTS.DominoBlock
 import OBJECTS.Gostone
 import OBJECTS.Seaweed
 import OBJECTS.Envelope
-import OBJECTS.tilted
 import TestMotion
 
 
@@ -22,7 +21,6 @@ controlSignal = 'card'
 # controlSignal = 'envelope'
 # controlSignal = 'seaweed'
 # controlSignal = 'testMotion'
-# controlSignal = 'tilted'
 ######################################
 
 def switchCase(case):
@@ -36,11 +34,11 @@ def switchCase(case):
         # OBJECTS.Card.ScoopingCard_noF2()
         # OBJECTS.Card.ScoopingCardSlope()
         # OBJECTS.Card.ScoopingCardRollOnly()
-        # OBJECTS.Card.ScoopingCardRollOnlySwivel()
+        # OBJECTS.Card.ScoopingCardRollOnly25()
 
     elif case == 'domino':
-        # OBJECTS.DominoBlock.ScoopingDominoBlock()
-        OBJECTS.DominoBlock.ScoopingDominoBlockTilted()
+        OBJECTS.DominoBlock.ScoopingDominoBlock()
+        # OBJECTS.DominoBlock.ScoopingDominoBlockTilted()
 
     elif case == 'goStone':
         OBJECTS.Gostone.ScoopingGostone()
@@ -61,9 +59,6 @@ def switchCase(case):
         TestMotion.TestGetEncoder()
         # TestMotion.TestMotion()
         # TestMotion.TestMotionStop()
-
-    elif case == 'tilted':
-        OBJECTS.tilted.tiltScooping()
 
     else:
         print("Check the controlSignal")

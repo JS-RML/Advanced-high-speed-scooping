@@ -51,7 +51,7 @@ def ScoopingCard(): # for test
 
     Gripper.SetIdleState()
 
-def ScoopingCardSlopeCurrent():
+def ScoopingCardSlopeCurrent(): # for current detecting mode
     print("   [GRIPPER/ CARD-SLOPE]")
 
     timeStep = 0.0
@@ -92,7 +92,7 @@ def ScoopingCard_photo():#position: (130,70)
     Gripper.SetControlState()
     Gripper.SetMotorPosition(scoopingPosition)
     sleep(1.0)
-    Gripper.SetStiffness([20,20,30,30])
+    Gripper.SetStiffness([20,20,20,20])
     Gripper.SetVelocityGain([0.1,0.1,0.2,0.2])
 
     while(timeStep < 5.5):
@@ -121,6 +121,8 @@ def ScoopingCard_photo():#position: (130,70)
     Gripper.SetIdleState()
 
 def ScoopingCard0():#position: (130,70)
+    # d=5mm, position(145,65)
+    # d=28mm, position(110, 70)
     print("   [GRIPPER/ CARD]")
     timeStep = 0.0
     firstRun = True
@@ -128,14 +130,15 @@ def ScoopingCard0():#position: (130,70)
     prevtempEncoderVar = np.zeros(4)
     encoderDifference = np.zeros(4)
 
-    scoopingPosition = [23, 26, 40, -40] # new ready
+    # scoopingPosition = [23, 26, 40, -40] # new ready
+    scoopingPosition = [-1.5, 31, 40, -40]
     grabPosition = [61, 7, -62, -3] # all new grab, if you use this point you have to set the velocity integral gain as 0.
 
     Gripper.SetControlState()
     Gripper.SetMotorPosition(scoopingPosition)
     sleep(1.0)
-    Gripper.SetStiffness([20,20,30,30])
-    Gripper.SetVelocityGain([0.1,0.1,0.2,0.2])
+    Gripper.SetStiffness([20,20,20,20])
+    Gripper.SetVelocityGain([0.1,0.1,0.1,0.1])
 
     while(timeStep < 5.5):
         tempEncoderVar = Gripper.GetEncoderValue()
@@ -148,13 +151,15 @@ def ScoopingCard0():#position: (130,70)
 
         encoderDifference = abs(tempEncoderVar - prevtempEncoderVar)
 
-        if encoderDifference[0] > 0.02 or encoderDifference[1] > 0.02:
-            Gripper.SetStiffness([40,40,40,40])
-            Gripper.SetVelocityGain([0.1, 0.1, 0.2, 0.2])
+        if encoderDifference[0] > 0.01 or encoderDifference[1] > 0.01:
+            Gripper.SetStiffness([80,80,80,80])
+            Gripper.SetVelocityGain([0.1, 0.1, 0.1, 0.1])
             Gripper.SetMotorPosition(grabPosition)
 
         else :
             pass
+
+        print(Gripper.GetMotorPosition()[2])
 
         timeStep += 1/FREQUENCY
         sleep(1/FREQUENCY)
@@ -162,7 +167,7 @@ def ScoopingCard0():#position: (130,70)
 
     Gripper.SetIdleState()
 
-def ScoopingCard1():  #AOA test. smaller aoa (position: 105,70)
+def ScoopingCard1():  #AOA test. smaller aoa (position: 127,70) @공실관(145,65)
     print("   [GRIPPER/ CARD]")
     timeStep = 0.0
     firstRun = True
@@ -171,12 +176,12 @@ def ScoopingCard1():  #AOA test. smaller aoa (position: 105,70)
     encoderDifference = np.zeros(4)
 
     scoopingPosition = [50, 9, 49, -52] # for lower aoa
-    grabPosition = [61, 7, -62, -3]
+    grabPosition = [50, -5, -62, -3]
 
     Gripper.SetControlState()
     Gripper.SetMotorPosition(scoopingPosition)
     sleep(1.0)
-    Gripper.SetStiffness([20,20,40,40])
+    Gripper.SetStiffness([20,20,20,20])
     Gripper.SetVelocityGain([0.1,0.1,0.1,0.1])
 
     while(timeStep < 5):
@@ -190,8 +195,8 @@ def ScoopingCard1():  #AOA test. smaller aoa (position: 105,70)
 
         encoderDifference = abs(tempEncoderVar - prevtempEncoderVar)
 
-        if encoderDifference[0] > 0.005 or encoderDifference[1] > 0.005:
-            Gripper.SetStiffness([20,20,40,40])
+        if encoderDifference[0] > 0.01 or encoderDifference[1] > 0.01:
+            Gripper.SetStiffness([50,50,100,100])
             Gripper.SetVelocityGain([0.1,0.1,0.1,0.1])
             Gripper.SetMotorPosition(grabPosition)
 
@@ -204,7 +209,7 @@ def ScoopingCard1():  #AOA test. smaller aoa (position: 105,70)
 
     Gripper.SetIdleState()
 
-def ScoopingCard2():  #AOA test. bigger aoa (position: 150,70)
+def ScoopingCard2():  #AOA test. bigger aoa (position: 170,65)
     print("   [GRIPPER/ CARD]")
     timeStep = 0.0
     firstRun = True
@@ -214,11 +219,12 @@ def ScoopingCard2():  #AOA test. bigger aoa (position: 150,70)
 
     scoopingPosition = [-3, 39, -14, -15]
     grabPosition = [61, 7, -62, -3]
+    # grabPosition = [-3, 39, -62, -3]
 
     Gripper.SetControlState()
     Gripper.SetMotorPosition(scoopingPosition)
     sleep(1.0)
-    Gripper.SetStiffness([20,20,50,50])
+    Gripper.SetStiffness([20,20,20,20])
     Gripper.SetVelocityGain([0.1,0.1,0.1,0.1])
 
     while(timeStep < 4):
@@ -261,7 +267,7 @@ def ScoopingCard_noF0(): # for one-digit exp (130,70)
     Gripper.SetControlState()
     Gripper.SetMotorPosition(scoopingPosition)
     sleep(1.0)
-    Gripper.SetStiffness([50,50,100,100])
+    Gripper.SetStiffness([20,20,20,20])
     Gripper.SetVelocityGain([0.1,0.1,0.1,0.1])
 
     while(timeStep < 4):
@@ -276,10 +282,9 @@ def ScoopingCard_noF0(): # for one-digit exp (130,70)
         encoderDifference = abs(tempEncoderVar - prevtempEncoderVar)
 
         if encoderDifference[2] > 0.002 or encoderDifference[3] > 0.002:
-            Gripper.SetStiffness([50,50,100,100])
+            Gripper.SetStiffness([50,50,60,60])
             Gripper.SetVelocityGain([0.1, 0.1, 0.1, 0.1])
             Gripper.SetMotorPosition(grabPosition)
-            break
 
         else :
             pass
@@ -304,7 +309,7 @@ def ScoopingCard_noF1(): # for one-digit aoa exp.
     Gripper.SetControlState()
     Gripper.SetMotorPosition(scoopingPosition)
     sleep(1.0)
-    Gripper.SetStiffness([30,30,30,30])
+    Gripper.SetStiffness([20,20,20,20])
     Gripper.SetVelocityGain([0.1,0.1,0.1,0.1])
 
     while(timeStep < 4):
@@ -346,7 +351,7 @@ def ScoopingCard_noF2(): # for one-digit aoa exp big
     Gripper.SetControlState()
     Gripper.SetMotorPosition(scoopingPosition)
     sleep(1.0)
-    Gripper.SetStiffness([50,50,30,30])
+    Gripper.SetStiffness([20,20,20,20])
     Gripper.SetVelocityGain([0.1,0.1,0.1,0.1])
 
     while(timeStep < 4):
@@ -402,7 +407,7 @@ def ScoopingCardRollOnly(): # for fixed fingertip, position(90,90)
         encoderDifference = abs(tempEncoderVar - prevtempEncoderVar)
 
         if encoderDifference[0] > 0.01 or encoderDifference[1] > 0.01:
-            Gripper.SetStiffness([50,50,60,60])
+            Gripper.SetStiffness([40,40,60,60])
             Gripper.SetVelocityGain([0.1, 0.1, 0.2, 0.2])
 
             Gripper.SetMotorPosition(grabPosition)
@@ -415,7 +420,7 @@ def ScoopingCardRollOnly(): # for fixed fingertip, position(90,90)
 
     Gripper.SetIdleState()
 
-def ScoopingCardRollOnlySwivel(): # for swivel fingertip (70,120)
+def ScoopingCardRollOnly25(): # for swivel fingertip (105,195)
     timeStep = 0.0
     firstRun = True
     tempEncoderVar = np.zeros(4)
@@ -423,7 +428,7 @@ def ScoopingCardRollOnlySwivel(): # for swivel fingertip (70,120)
     encoderDifference = np.zeros(4)
 
     scoopingPosition = [11, 21, 35, -40]
-    grabPosition = [50, 15, -55, -10] # new grab
+    grabPosition = [11, 21, -55, -10] # for chip
 
     Gripper.SetControlState()
     Gripper.SetMotorPosition(scoopingPosition)
@@ -443,8 +448,8 @@ def ScoopingCardRollOnlySwivel(): # for swivel fingertip (70,120)
         encoderDifference = abs(tempEncoderVar - prevtempEncoderVar)
 
         if encoderDifference[0] > 0.01 or encoderDifference[1] > 0.01:
-            Gripper.SetStiffness([50,50,100,100])
-            Gripper.SetVelocityGain([0.1, 0.1, 0.1, 0.1])
+            Gripper.SetStiffness([10,10,40,40]) # cracker (20,20, 30,30), card(40,40,60,60)
+            Gripper.SetVelocityGain([0.1, 0.1, 0.1, 0.1]) # cracker (0.1, 0.1, 0.2, 0.2), card(0.2, 0.2, 0.2, 0.2)
             Gripper.SetMotorPosition(grabPosition)
         else :
             pass
