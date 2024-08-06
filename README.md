@@ -36,7 +36,7 @@ The repository implemented a manipulation technique for picking up flat objects 
 **Related materials**
 - [**HKRML High-Speed-Scooping**](https://github.com/HKUST-RML/high_speed_scooping)
 - [**HKRML Direct-Drive Hand**](https://github.com/HKUST-RML/ddh_hardware)
-- [**PNU Direct-Drive Gripper**](https://github.com/chahyeonje/PNU-Direct-Drive-Gripper)
+- [**Direct-Drive Gripper with Swivel Fingertips**](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips)
 
 ## 2. Prerequisites
 ### 2.1 Hardware
