@@ -83,7 +83,6 @@ thread2 = threading.Thread(target=threadRB5) # for robot arm
 ```
 3. In the 'GRIPPER/mainGripper.py', you can select control siganl choosing obejcts which will be scooped.
 ```python
-######## select control signal ########
 controlSignal = 'card'
 # controlSignal = 'domino'
 # controlSignal = 'goStone'
@@ -92,7 +91,6 @@ controlSignal = 'card'
 # controlSignal = 'envelope'
 # controlSignal = 'seaweed'
 # controlSignal = 'testMotion'
-######################################
 ```
 
 ### 3.2 Changing execution parameters
@@ -101,9 +99,14 @@ In the 'GRIPPER/OBJECTS/Card.py', there are some parameters you can adjust to sc
 (They are all a one-dimensional array with 4 elements L0, L1, R0 and R1 in order.)
 - ***scoopingPosition*** : Ready position of the finger and thumb(degree).
 - ***grabPosition*** : Grab position of the finger and thumb(degree).
-- ***setStiffness*** : Each motor's stiffness
-- 
-
-
+- ***setStiffness*** : Each motor's position gain.
+- ***setVelocityGain*** : Each motor's velocity gain.
+```python
+# Example code
+scoopingPosition = [27, 28, 44, -47]
+grabPosition = [45, 10, -35, -17]
+Gripper.SetStiffness([30,30,30,30])
+Gripper.SetVelocityGain([0.15,0.15,0.15,0.15])
+```
 ## Maintenance
 Hyeonje Cha(guswp3611@gmail.com) and Seunghwa Oh(seunghwa9118@pusan.ac.kr)
