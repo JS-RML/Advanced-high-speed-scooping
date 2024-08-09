@@ -90,7 +90,8 @@ python3 main.py
 thread1 = threading.Thread(target=threadGripper) # for gripper
 thread2 = threading.Thread(target=threadRB5) # for robot arm
 ```
-3. In the 'GRIPPER/mainGripper.py', you can select control siganl choosing obejcts which will be scooped.
+
+In the 'GRIPPER/mainGripper.py', you can select control siganl choosing obejcts which will be scooped.
 ```python
 controlSignal = 'card'
 # controlSignal = 'domino'
