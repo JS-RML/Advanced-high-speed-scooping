@@ -76,20 +76,33 @@ RF1 = Actuator(odrv3, 0.338, 1, 45)
 ```shell
 python3 main.py
 ```
-2. If you want to operate the RB5 and the gripper seperately
-```shell
-python3 RB5/mainRB5.py
+2. Then two threads are run automatically.
+```python
+thread1 = threading.Thread(target=threadGripper) # for gripper
+thread2 = threading.Thread(target=threadRB5) # for robot arm
 ```
-or
-```shell
-python3 gripper/mainGripper.py
+3. In the 'GRIPPER/mainGripper.py', you can select control siganl choosing obejcts which will be scooped.
+```python
+######## select control signal ########
+controlSignal = 'card'
+# controlSignal = 'domino'
+# controlSignal = 'goStone'
+# controlSignal = 'cracker'
+# controlSignal = 'chip'
+# controlSignal = 'envelope'
+# controlSignal = 'seaweed'
+# controlSignal = 'testMotion'
+######################################
 ```
 
 ### 3.2 Changing execution parameters
-
+In the 'GRIPPER/OBJECTS/Card.py', there are some parameters you can adjust to scoop the card.
 **Gripper Dimensions**
 (They are all a one-dimensional array with 4 elements L0, L1, R0 and R1 in order.)
 - ***scoopingPosition*** : Ready position of the finger and thumb(degree).
+- ***grabPosition*** : Grab position of the finger and thumb(degree).
+- ***setStiffness*** : Each motor's stiffness
+- 
 
 
 ## Maintenance
