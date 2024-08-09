@@ -50,6 +50,11 @@ Cloning our *Advanced-high-speed-scooping* software.
 ```shell
 git clone https://github.com/JS-RML/Advanced-high-speed-scooping.git
 ```
+
+Installing 'odrivetool'. If you already installed this pakage when you calibrate odrive, then you can skip this step.
+```shell
+pip install --upgrade odrivetool
+```
 ## 3. Run High-Speed Scooping
 ### 3.0 Before running the code
 You sholud match the 'Actuator object' and the serial number of motor driver in the 'GRIPPER/Gripper.py' source file.
