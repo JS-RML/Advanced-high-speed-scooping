@@ -104,7 +104,7 @@ controlSignal = 'card'
 ```
 
 ### 3.2 Changing execution parameters
-In the 'GRIPPER/OBJECTS/Card.py', there are some parameters you can adjust to scoop the card.
+In the 'GRIPPER/OBJECTS/Card.py', there are some parameters you can adjust to scoop the card. The same code exist in the each object source file(domino.py, goStone.py, cracker.py ...)
 (They are all a one-dimensional array with four elements L0, L1, R0 and R1 in order.)
 - ***scoopingPosition*** : Ready position of the finger and thumb(degree).
 - ***grabPosition*** : Grab position of the finger and thumb(degree).
