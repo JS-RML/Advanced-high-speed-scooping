@@ -112,10 +112,51 @@ In the 'GRIPPER/OBJECTS/Card.py', there are some parameters you can adjust to sc
 - ***setVelocityGain*** : Each motor's velocity gain.
 ```python
 # Example code
-scoopingPosition = [27, 28, 44, -47]
-grabPosition = [45, 10, -35, -17]
-Gripper.SetStiffness([30,30,30,30])
-Gripper.SetVelocityGain([0.15,0.15,0.15,0.15])
+def ScoopingCard(): # for test
+    print("   [GRIPPER/ CARD]")
+    timeStep = 0.0
+    firstRun = True
+    tempEncoderVar = np.zeros(4)
+    prevtempEncoderVar = np.zeros(4)
+    encoderDifference = np.zeros(4)
+
+    scoopingPosition = [27, 28, 44, -47]
+    grabPosition = [45, 10, -35, -17]
+
+    Gripper.SetControlState()
+    Gripper.SetMotorPosition(scoopingPosition)
+    sleep(1.0)
+    Gripper.SetStiffness([30,30,30,30])
+    Gripper.SetVelocityGain([0.15,0.15,0.15,0.15])
+
+    while(timeStep < 4):
+        Gripper.sharedTimeList.append(timeStep)
+        Gripper.sharedPositionList.append(Gripper.GetMotorPosition()[0])
+
+        tempEncoderVar = Gripper.GetEncoderValue()
+
+        if(firstRun):
+            prevtempEncoderVar = tempEncoderVar
+            firstRun = False
+        else :
+            pass
+
+        encoderDifference = abs(tempEncoderVar - prevtempEncoderVar)
+
+        if encoderDifference[0] > 0.01 or encoderDifference[1] > 0.01:
+            Gripper.SetStiffness([30,30,40,40])
+            Gripper.SetVelocityGain([0.3, 0.3, 0.3, 0.3])
+
+            Gripper.SetMotorPosition(grabPosition)
+        else :
+            pass
+
+        print(encoderDifference)
+        timeStep += 1/FREQUENCY
+        sleep(1/FREQUENCY)
+        prevtempEncoderVar = tempEncoderVar
+
+    Gripper.SetIdleState()
 ```
 ## Maintenance
 Hyeonje Cha(guswp3611@gmail.com) and Seunghwa Oh(seunghwa9118@pusan.ac.kr)
