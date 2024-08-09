@@ -47,6 +47,25 @@ The repository implemented a manipulation technique for picking up flat objects 
 Our software is implemented with **python3** and tested on **Ubuntu 20.04**.
   
 ## 3. Run High-Speed Scooping
+### 3.0 Before running the code
+You sholud match the motordriver and the serial number in the 'GRIPPER/Gripper.py' source file.
+```python
+SN_L0 = '384D34783539'
+SN_L1 = '383F34723539'
+SN_R0 = '3868345A3539'
+SN_R1 = '3866346F3539'
+
+odrv0 = odrive.find_any(serial_number=SN_L0)
+odrv1 = odrive.find_any(serial_number=SN_L1)
+odrv2 = odrive.find_any(serial_number=SN_R0)
+odrv3 = odrive.find_any(serial_number=SN_R1)
+
+LF0 = Actuator(odrv0, 0.966, 1, 45) # left finger
+LF1 = Actuator(odrv1, 0.955, 1, 45)
+RF0 = Actuator(odrv2, 0.977, 1, 45) # right finger
+RF1 = Actuator(odrv3, 0.338, 1, 45)
+```
+
 ### 3.1 Run with real robot
 1. You can run **main.py**.
 ```shell
