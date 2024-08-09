@@ -64,7 +64,7 @@ odrv1 = odrive.find_any(serial_number=SN_L1)
 odrv2 = odrive.find_any(serial_number=SN_R0)
 odrv3 = odrive.find_any(serial_number=SN_R1)
 
-# Create 'Actuator' objects and match it with the 'odrive' objects.
+# Create 'Actuator' objects and match these with the 'odrive' objects.
 LF0 = Actuator(odrv0, 0.966, 1, 45) # left finger
 LF1 = Actuator(odrv1, 0.955, 1, 45)
 RF0 = Actuator(odrv2, 0.977, 1, 45) # right finger
