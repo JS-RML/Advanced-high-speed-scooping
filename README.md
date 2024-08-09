@@ -95,7 +95,6 @@ controlSignal = 'card'
 
 ### 3.2 Changing execution parameters
 In the 'GRIPPER/OBJECTS/Card.py', there are some parameters you can adjust to scoop the card.
-**Gripper Dimensions**
 (They are all a one-dimensional array with 4 elements L0, L1, R0 and R1 in order.)
 - ***scoopingPosition*** : Ready position of the finger and thumb(degree).
 - ***grabPosition*** : Grab position of the finger and thumb(degree).
