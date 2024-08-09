@@ -45,9 +45,10 @@ The repository implemented a manipulation technique for picking up flat objects 
 
 ### 2.2 Software
 Our software is implemented with **python3** and tested on **Ubuntu 20.04**.
+
 Cloning our *Advanced-high-speed-scooping* software.
 ```shell
-git clone 
+git clone https://github.com/JS-RML/Advanced-high-speed-scooping.git
 ```
 ## 3. Run High-Speed Scooping
 ### 3.0 Before running the code
