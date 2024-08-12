@@ -1,4 +1,4 @@
-# High-Speed Scooping 2024
+# Advanced High-Speed Scooping (2024)
 
 ## 1. Overview
 <!-- The repository implemented a manipulation technique for picking up flat objects on hard surfaces known as high-speed scooping. Based on the ideas from HKUST's HSS, this method was performed in a variety of environments, not just on flat surfaces but also on inclined planes and the sideway-tilted planes. The experiments conducted demonstrate that this technique can be widely utilized in various settings, not just under limited and specific conditions.-->
