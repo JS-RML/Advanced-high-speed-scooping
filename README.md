@@ -82,7 +82,7 @@ You have to remember these serial numbers(384D34783539, 383F34723539 ...) to cre
 ### Before running the code
 You should create 'Actuator' objects and match the created objects and the serial numbers of motor drivers. You can type the following codes directly in the 'GRIPPER/Gripper.py' source file.
 
-#### (1) Define the internal 'SN_variable' using motor driver's serial numbers.
+(1) Define the internal 'SN_variable' using motor driver's serial numbers.
 ```python
 SN_L0 = '384D34783539'
 SN_L1 = '383F34723539'
@@ -90,7 +90,7 @@ SN_R0 = '3868345A3539'
 SN_R1 = '3866346F3539'
 ```
 
-#### (2) Create 'odrive' objects using internal 'SN_variable'
+(2) Create 'odrive' objects using internal 'SN_variable'
 ```python
 odrv0 = odrive.find_any(serial_number=SN_L0)
 odrv1 = odrive.find_any(serial_number=SN_L1)
@@ -98,7 +98,7 @@ odrv2 = odrive.find_any(serial_number=SN_R0)
 odrv3 = odrive.find_any(serial_number=SN_R1)
 ```
 
-#### (3) Create 'Actuator' objects and match the 'Actuator' objects with the 'odrive' objects. The second argument of 'Actuator' is the motor offset.(refer to 'Calibrate Zero Position' of [gripper repo](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main))
+(3) Create 'Actuator' objects and match the 'Actuator' objects with the 'odrive' objects. The second argument of 'Actuator' is the motor offset.(refer to 'Calibrate Zero Position' of [gripper repo](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main))
 ```python
 LF0 = Actuator(odrv0, 0.966, 1, 45) # left finger
 LF1 = Actuator(odrv1, 0.955, 1, 45)
@@ -106,8 +106,19 @@ RF0 = Actuator(odrv2, 0.977, 1, 45) # right finger
 RF1 = Actuator(odrv3, 0.338, 1, 45)
 ```
 
-Now you can control 
+Now you can control the motors, however before running the program you should select an obejct. You can see the following codes in the 'GRIPPER/mainGripper.py'.
 
+(4) Select an object to scoop.
+```python
+controlSignal = 'card'
+# controlSignal = 'domino'
+# controlSignal = 'goStone'
+# controlSignal = 'cracker'
+# controlSignal = 'chip'
+# controlSignal = 'envelope'
+# controlSignal = 'seaweed'
+# controlSignal = 'testMotion'
+```
 
 ### Run with real robot
 Run **main.py**.
@@ -118,19 +129,6 @@ Then two threads run simultaneously.
 ```python
 thread1 = threading.Thread(target=threadGripper) # for gripper
 thread2 = threading.Thread(target=threadRB5) # for robot arm
-```
-
-In the 'GRIPPER/mainGripper.py', you can select control signal choosing obejcts which will be scooped.
-
-```python
-controlSignal = 'card'
-# controlSignal = 'domino'
-# controlSignal = 'goStone'
-# controlSignal = 'cracker'
-# controlSignal = 'chip'
-# controlSignal = 'envelope'
-# controlSignal = 'seaweed'
-# controlSignal = 'testMotion'
 ```
 
 ### Changing execution parameters
