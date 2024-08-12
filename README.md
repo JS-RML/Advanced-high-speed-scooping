@@ -84,7 +84,6 @@ You should create 'Actuator' objects and match the created objects and the seria
 
 #### 3.1 Define the internal 'SN_variable' using motor driver's serial numbers.
 ```python
-# Define the internal 'SN_variable' using motor driver's serial number.
 SN_L0 = '384D34783539'
 SN_L1 = '383F34723539'
 SN_R0 = '3868345A3539'
@@ -99,7 +98,7 @@ odrv2 = odrive.find_any(serial_number=SN_R0)
 odrv3 = odrive.find_any(serial_number=SN_R1)
 ```
 
-#### 3.3 Create 'Actuator' objects and match these with the 'odrive' objects.
+#### 3.3 Create 'Actuator' objects and match the 'Actuator' objects with the 'odrive' objects.
 ```python
 LF0 = Actuator(odrv0, 0.966, 1, 45) # left finger
 LF1 = Actuator(odrv1, 0.955, 1, 45)
