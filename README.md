@@ -44,7 +44,7 @@ The passive swivel fingertips help pick the object even when the workplane of th
 ## 2. Prerequisites
 ### 2.1 Hardware
 - [**Rainbow robotics RB5-850**](https://www.rainbow-robotics.com/rb?gad_source=1&gclid=CjwKCAiAq4KuBhA6EiwArMAw1H8wNPbhSO7W_gAv-8gQMxyxffJRlo_nOqRpkLgsJm7VGlkmAHT8xRoChH0QAvD_BwE): Industrial Robot Arm 
-- [**Direct-Drive Gripper**]((https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main))
+- [**Direct-Drive Gripper**](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main)
 
 ### 2.2 Software
 Our software is implemented with **python3** and tested on **Ubuntu 20.04**.
