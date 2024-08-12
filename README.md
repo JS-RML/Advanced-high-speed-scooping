@@ -93,7 +93,7 @@ Then two threads run simultaneously.
 thread1 = threading.Thread(target=threadGripper) # for gripper
 thread2 = threading.Thread(target=threadRB5) # for robot arm
 ```
-$${\color{red}RTEST}$$
+$${\color{red}So when to select the option below? Before running main.py or after?}$$
 $\color{red}{\textsf{So when to select the option below? Explain more explicitly the list of low-level action items that your user needs to perform.}}$
 In the 'GRIPPER/mainGripper.py', you can select control signal choosing obejcts which will be scooped.
 
