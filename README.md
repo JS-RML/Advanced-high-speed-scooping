@@ -60,10 +60,10 @@ pip install --upgrade odrivetool
 ```
 ## 3. Run High-Speed Scooping
 ### Before running the code
-You sholud match the 'Actuator object' and the serial number of motor driver in the 'GRIPPER/Gripper.py' source file.
+You should match the 'Actuator object' and the serial number of motor driver in the 'GRIPPER/Gripper.py' source file.
 
 ```python
-# exmaple code
+# example code
 # Define the internal 'SN_variable' using motor driver's serial number.
 SN_L0 = '384D34783539'
 SN_L1 = '383F34723539'
