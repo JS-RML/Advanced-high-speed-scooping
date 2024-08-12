@@ -82,7 +82,7 @@ You have to remember these serial numbers(384D34783539, 383F34723539 ...) to cre
 ### Before running the code
 You should create 'Actuator' objects and match the created objects and the serial numbers of motor drivers. You can type the following codes directly in the 'GRIPPER/Gripper.py' source file.
 
-(1) Define the internal 'SN_variable' using motor driver's serial numbers.
+(1) Define the internal 'SN_variable' using motor driver's serial numbers which were found before.
 ```python
 SN_L0 = '384D34783539'
 SN_L1 = '383F34723539'
@@ -106,7 +106,7 @@ RF0 = Actuator(odrv2, 0.977, 1, 45) # right finger
 RF1 = Actuator(odrv3, 0.338, 1, 45)
 ```
 
-Now you can control the motors. Let's select an obejct to scoop. 
+Now you can control the motors. Let's select an obejct to scoop in the 'GRIPPER/mainGripper.py' source file. Also you can type directly in the source file.
 
 (4) Select an object to scoop.
 ```python
