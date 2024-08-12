@@ -49,12 +49,12 @@ The passive swivel fingertips help pick the object even when the workplane of th
 ### 2.2 Software
 Our software is implemented with **python3** and tested on **Ubuntu 20.04**.
 
-Cloning our *Advanced-high-speed-scooping* software.
+Clone our *Advanced-high-speed-scooping* software.
 ```shell
 git clone https://github.com/JS-RML/Advanced-high-speed-scooping.git
 ```
 
-Installing 'odrivetool'. If you already installed this pakage when you calibrate odrive, then you can skip this step.
+Install 'odrivetool'. If you've already installed this pakage when you calibrate odrive, you can skip this step.
 ```shell
 pip install --upgrade odrivetool
 ```
