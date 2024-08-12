@@ -54,7 +54,7 @@ Clone our *Advanced-high-speed-scooping* software.
 git clone https://github.com/JS-RML/Advanced-high-speed-scooping.git
 ```
 
-Install 'odrivetool'. If you've already installed this pakage when you calibrate odrive, you can skip this step.
+Install `odrivetool`. If you've already installed this pakage when you calibrate odrive, you can skip this step.
 ```shell
 pip install --upgrade odrivetool
 ```
