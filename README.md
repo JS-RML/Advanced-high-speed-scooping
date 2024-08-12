@@ -81,7 +81,6 @@ You have to remember these serial numbers(384D34783539, 383F34723539 ...) to cre
 ## 3. Run High-Speed Scooping
 ### Before running the code
 You should create 'Actuator' objects and match the created objects and the serial numbers of motor drivers in the 'GRIPPER/Gripper.py' source file. 
-${\color{red}This \space sounds \space more \space like \space a \space high-level \space goal \space to \space achieve. \space Explain \space more \space explicitly \space the \space list \space of \space low-level \space action \space items \space that \space your \space user \space needs \space to \space perform.}$ 
 
 
 ```python
