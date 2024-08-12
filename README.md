@@ -42,11 +42,11 @@ The passive swivel fingertips help pick the object even when the workplane of th
 - [**Direct-Drive Gripper (2022)**](https://github.com/JS-RML/ddh_hardware)
 
 ## 2. Prerequisites
-### 2.1 Hardware
+### Hardware
 - [**Rainbow robotics RB5-850**](https://www.rainbow-robotics.com/rb?gad_source=1&gclid=CjwKCAiAq4KuBhA6EiwArMAw1H8wNPbhSO7W_gAv-8gQMxyxffJRlo_nOqRpkLgsJm7VGlkmAHT8xRoChH0QAvD_BwE): Industrial Robot Arm 
 - [**Direct-Drive Gripper**](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main)
 
-### 2.2 Software
+### Software
 Our software is implemented with **python3** and tested on **Ubuntu 20.04**.
 
 Clone our *Advanced-high-speed-scooping* software.
@@ -59,7 +59,7 @@ Install 'odrivetool'. If you've already installed this pakage when you calibrate
 pip install --upgrade odrivetool
 ```
 ## 3. Run High-Speed Scooping
-### 3.0 Before running the code
+### Before running the code
 You sholud match the 'Actuator object' and the serial number of motor driver in the 'GRIPPER/Gripper.py' source file.
 
 ```python
@@ -83,7 +83,7 @@ RF0 = Actuator(odrv2, 0.977, 1, 45) # right finger
 RF1 = Actuator(odrv3, 0.338, 1, 45)
 ```
 
-### 3.1 Run with real robot
+### Run with real robot
 1. You can run **main.py**.
 ```shell
 python3 main.py
@@ -106,7 +106,7 @@ controlSignal = 'card'
 # controlSignal = 'testMotion'
 ```
 
-### 3.2 Changing execution parameters
+### Changing execution parameters
 In the 'GRIPPER/OBJECTS/Card.py', there are some parameters you can adjust to scoop the card. The same code exist in the each object source file(domino.py, goStone.py, cracker.py ...)
 (They are all a one-dimensional array with four elements L0, L1, R0 and R1 in order.)
 - ***scoopingPosition*** : Ready position of the finger and thumb(degree).
