@@ -121,7 +121,7 @@ controlSignal = 'card'
 ```
 
 ### Run with real robot
-Run **main.py**.
+To run the software, type **main.py** in the terminal.
 ```shell
 python3 main.py
 ```
