@@ -37,8 +37,8 @@ The passive swivel fingertips help pick the object even when the workplane of th
 </p>
 
 **Related materials**
-- [**HKRML High-Speed-Scooping**](https://github.com/HKUST-RML/high_speed_scooping)
-- [**HKRML Direct-Drive Hand**](https://github.com/HKUST-RML/ddh_hardware)
+- [**High-Speed Scooping (2022)**](https://github.com/JS-RML/high_speed_scooping)
+- [**Direct-Drive Hand (2022)**](https://github.com/JS-RML/ddh_hardware)
 - [**Direct-Drive Gripper with Swivel Fingertips**](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips)
 
 ## 2. Prerequisites
