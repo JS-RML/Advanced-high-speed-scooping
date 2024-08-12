@@ -9,7 +9,7 @@ This repository contains the latest software implementation of **High-Speed Scoo
 <img src="media/envelope_.gif" width="400"> 
 </p>
 
-
+<!--
 ### *High-Speed Scooping(slope)*
 <p align = "center">
 <img src="media/slope_card_.gif" width="400">
@@ -27,6 +27,7 @@ This repository contains the latest software implementation of **High-Speed Scoo
 <img src="media/sideway_card.gif" width="400">
 <img src="media/sideway_domino.gif" width="400">
 </p>
+-->
 
 ### *High-Speed Scooping(slope-tilted + passive joint finger tip)*
 <p align = "center">
