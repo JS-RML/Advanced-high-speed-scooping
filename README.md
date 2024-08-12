@@ -2,7 +2,7 @@
 
 ## 1. Overview
 <!-- The repository implemented a manipulation technique for picking up flat objects on hard surfaces known as high-speed scooping. Based on the ideas from HKUST's HSS, this method was performed in a variety of environments, not just on flat surfaces but also on inclined planes and the sideway-tilted planes. The experiments conducted demonstrate that this technique can be widely utilized in various settings, not just under limited and specific conditions.-->
-This repository contains the latest software implementation of **High-Speed Scooping** using our latest [direct-drive gripper](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips). It can be applied to rapidly picking thin objects off from a hard surface, which would be quite challenging with a straightforward approach aiming at directly obtaining a pinch grasp.
+This repository contains the latest software implementation of **High-Speed Scooping** using our latest [direct-drive gripper](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips). It can be applied to rapidly and adaptively picking thin objects off from a hard surface, which would be quite challenging with a straightforward approach aiming at directly obtaining a pinch grasp.
 ### *High-Speed Scooping*
 <p align = "center">
 <img src="media/card_.gif" width="400"> 
@@ -29,7 +29,8 @@ This repository contains the latest software implementation of **High-Speed Scoo
 </p>
 -->
 
-### *High-Speed Scooping(slope-tilted + passive joint finger tip)*
+### *Adaptive High-Speed Scooping*
+The passive swivel fingertips help pick the object even when the workplane of the gripper is not normal to the ground surface.
 <p align = "center">
 <img src="media/tilted_card.gif" width="400">
 <img src="media/tilted_domino.gif" width="400">
