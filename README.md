@@ -84,11 +84,11 @@ RF1 = Actuator(odrv3, 0.338, 1, 45)
 ```
 
 ### Run with real robot
-1. You can run **main.py**.
+1. Run **main.py**.
 ```shell
 python3 main.py
 ```
-2. Then two threads are run automatically.
+2. Then two threads run simultaneously.
 ```python
 thread1 = threading.Thread(target=threadGripper) # for gripper
 thread2 = threading.Thread(target=threadRB5) # for robot arm
