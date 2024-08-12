@@ -95,7 +95,7 @@ Then two threads run simultaneously.
 thread1 = threading.Thread(target=threadGripper) # for gripper
 thread2 = threading.Thread(target=threadRB5) # for robot arm
 ```
-$\color{red}{\textsf{Not clear when to select an option below.}}$
+${\color{red}So \space you \space select \space an \space object \space option \space after \space running main.py?}$
 In the 'GRIPPER/mainGripper.py', you can select control signal choosing obejcts which will be scooped.
 
 ```python
