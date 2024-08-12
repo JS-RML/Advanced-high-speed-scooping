@@ -143,7 +143,7 @@ Gripper.SetStiffness([30,30,30,30])
 Gripper.SetVelocityGain([0.15,0.15,0.15,0.15])
 ```
 
-Repeat the collision destection condition in the while loop until a change in the motor's position due to a collision is detected.
+Repeat the condition of collision in the while loop until a change in the motor's position due to a collision is detected.
 ```python
 while(timeStep < 4):
         tempEncoderVar = Gripper.GetEncoderValue()
