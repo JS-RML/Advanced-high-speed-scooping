@@ -61,7 +61,7 @@ pip install --upgrade odrivetool
 ## 3. Run High-Speed Scooping
 ### Before running the code
 You should match the 'Actuator object' and the serial number of motor driver in the 'GRIPPER/Gripper.py' source file. 
-$${\color{red}Light \space Green}$$***This sounds more like a high-level goal to achieve. Explain more explicitly the list of low-level action items that your user needs to perform.***
+$${\color{red}This sounds more like a high-level goal to achieve. Explain more explicitly the list of low-level action items that your user needs to perform.}$$ ***This sounds more like a high-level goal to achieve. Explain more explicitly the list of low-level action items that your user needs to perform.***
 
 
 ```python
