@@ -96,7 +96,7 @@ thread2 = threading.Thread(target=threadRB5) # for robot arm
 
 In the 'GRIPPER/mainGripper.py', you can select control signal choosing obejcts which will be scooped. $\color{red}{\textsf{So when does a user need to select one of the object settings? Before or after running main.py?}}$ $\color{red}{\textsf{So when does a user need to select one of the object settings? Before or after running main.py?}}$
 
-$\color{red}{\textsf{So when does a user need to select one of the object settings? Before or after running main.py?}}$
+$\color{red}{\textsf{So when does a user need to select one of the object settings?}}$
 
 ```python
 controlSignal = 'card'
