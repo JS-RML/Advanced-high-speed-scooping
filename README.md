@@ -36,10 +36,10 @@ The passive swivel fingertips help pick the object even when the workplane of th
 <img src="media/tilted_domino.gif" width="400">
 </p>
 
-**Related materials**
+**Related repos**
+- [**Direct-Drive Hand (2024)**](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips)
 - [**High-Speed Scooping (2022)**](https://github.com/JS-RML/high_speed_scooping)
 - [**Direct-Drive Hand (2022)**](https://github.com/JS-RML/ddh_hardware)
-- [**Direct-Drive Gripper with Swivel Fingertips**](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips)
 
 ## 2. Prerequisites
 ### 2.1 Hardware
