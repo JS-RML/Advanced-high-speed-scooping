@@ -58,9 +58,29 @@ Install `odrivetool`. If you've already installed this pakage when you calibrate
 ```shell
 pip install --upgrade odrivetool
 ```
+
+Connect your motor drivers(odriveS1) with your PC and type 'odrivetool' in the terminal.
+```shell
+odrivetool
+```
+
+If the program is intalled and the motor drivers(odriveS1) are connected successfully, then you can see the following messages
+```shell
+ODrive control utility v0.6.7
+Please connect your ODrive
+You can also type help() or quit().
+
+Connected to ODrive S1 384D34783539 (firmware v0.6.7) as odrv0
+Connected to ODrive S1 383F34723539 (firmware v0.6.7) as odrv1
+Connected to ODrive S1 3868345A3539 (firmware v0.6.7) as odrv2
+Connected to ODrive S1 3866346F3539 (firmware v0.6.7) as odrv3
+```
+
+You have to remember these serial numbers(384D34783539, 383F34723539 ...) to create 'Actuator' objects.
+
 ## 3. Run High-Speed Scooping
 ### Before running the code
-You should match the 'Actuator object' and the serial number of motor driver in the 'GRIPPER/Gripper.py' source file. 
+You should create 'Actuator' objects and match the created objects and the serial numbers of motor drivers in the 'GRIPPER/Gripper.py' source file. 
 ${\color{red}This \space sounds \space more \space like \space a \space high-level \space goal \space to \space achieve. \space Explain \space more \space explicitly \space the \space list \space of \space low-level \space action \space items \space that \space your \space user \space needs \space to \space perform.}$ 
 
 
