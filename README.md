@@ -98,7 +98,7 @@ odrv2 = odrive.find_any(serial_number=SN_R0)
 odrv3 = odrive.find_any(serial_number=SN_R1)
 ```
 
-(3) Create 'Actuator' objects and match the 'Actuator' objects with the 'odrive' objects. The second argument of 'Actuator' is the motor offset.(refer to 'Calibrate Zero Position' of [gripper repo](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main))
+(3) Create 'Actuator' objects and match the 'Actuator' objects with the 'odrive' objects. The second argument of 'Actuator' is the motor offset.(refer to 'Calibrate Zero Position' of [gripper repo](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main)). You don't need to change the third and fourth arguments.
 ```python
 LF0 = Actuator(odrv0, 0.966, 1, 45) # left finger
 LF1 = Actuator(odrv1, 0.955, 1, 45)
@@ -106,7 +106,7 @@ RF0 = Actuator(odrv2, 0.977, 1, 45) # right finger
 RF1 = Actuator(odrv3, 0.338, 1, 45)
 ```
 
-Now you can control the motors, however before running the program you should select an obejct. You can see the following codes in the 'GRIPPER/mainGripper.py'.
+Now you can control the motors, however before running the program you should select an obejct. Let the third and fourth arguments be 1, and 45.(no need to change these values)
 
 (4) Select an object to scoop.
 ```python
