@@ -94,7 +94,7 @@ thread1 = threading.Thread(target=threadGripper) # for gripper
 thread2 = threading.Thread(target=threadRB5) # for robot arm
 ```
 
-$\color{red}{\textsf{This sounds more like a high-level goal to achieve. Explain more explicitly the list of low-level action items that your user needs to perform.}}$
+$\color{red}{\textsf{So when to select the option below? Explain more explicitly the list of low-level action items that your user needs to perform.}}$
 In the 'GRIPPER/mainGripper.py', you can select control signal choosing obejcts which will be scooped.
 
 ```python
