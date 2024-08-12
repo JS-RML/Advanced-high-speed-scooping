@@ -93,7 +93,7 @@ Then two threads run simultaneously.
 thread1 = threading.Thread(target=threadGripper) # for gripper
 thread2 = threading.Thread(target=threadRB5) # for robot arm
 ```
-$\color{red}{\textsf{Missing links to the images below.}}$
+$\color{red}{\textsf{Not clear when to select an option below.}}$
 In the 'GRIPPER/mainGripper.py', you can select control signal choosing obejcts which will be scooped.
 
 ```python
