@@ -84,17 +84,17 @@ RF1 = Actuator(odrv3, 0.338, 1, 45)
 ```
 
 ### Run with real robot
-1. Run **main.py**.
+Run **main.py**.
 ```shell
 python3 main.py
 ```
-2. Then two threads run simultaneously.
+Then two threads run simultaneously.
 ```python
 thread1 = threading.Thread(target=threadGripper) # for gripper
 thread2 = threading.Thread(target=threadRB5) # for robot arm
 ```
 
-$\color{red}{\textsf{Not clear when to select this object option.}}$
+$\color{red}{\textsf{This sounds more like a high-level goal to achieve. Explain more explicitly the list of low-level action items that your user needs to perform.}}$
 In the 'GRIPPER/mainGripper.py', you can select control signal choosing obejcts which will be scooped.
 
 ```python
