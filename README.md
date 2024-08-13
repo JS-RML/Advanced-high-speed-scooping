@@ -80,9 +80,9 @@ Record these serial numbers (384D34783539, 383F34723539 ...) to create `Actuator
 
 ## 3. Run High-Speed Scooping
 ### Before running the code
-You should create 'Actuator' objects and match the created objects and the serial numbers of motor drivers. You can type the following codes directly in the 'GRIPPER/Gripper.py' source file.
-
-(1) Define the internal 'SN_variable' using motor driver's serial numbers which were found before.
+<!-- You should create 'Actuator' objects and match the created objects and the serial numbers of motor drivers. You can type the following codes directly in the 'GRIPPER/Gripper.py' source file.-->
+Modify `GRIPPER/Gripper.py` as follows.
+(1) Define the variables `SN_L0`, `SN_L1`, `SN_R0`, and `SN_R1` using the serial numbers aforementioned.
 ```python
 SN_L0 = '384D34783539'
 SN_L1 = '383F34723539'
@@ -90,7 +90,7 @@ SN_R0 = '3868345A3539'
 SN_R1 = '3866346F3539'
 ```
 
-(2) Create 'odrive' objects using internal 'SN_variable'
+(2) Create `odrive` objects using those `SN_L0`, `SN_L1`, `SN_R0`, and `SN_R1`.
 ```python
 odrv0 = odrive.find_any(serial_number=SN_L0)
 odrv1 = odrive.find_any(serial_number=SN_L1)
