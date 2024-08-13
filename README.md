@@ -99,7 +99,7 @@ odrv2 = odrive.find_any(serial_number=SN_R0)
 odrv3 = odrive.find_any(serial_number=SN_R1)
 ```
 
-(3) Create `Actuator` objects using the `odrive` objects above. The second argument of each `Actuator` object is the motor offset value (refer to 'Calibrate Zero Position' of [the direct-drive gripper repo](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main)). Let the third and fourth arguments be 1, and 45.(no need to change these values)
+(3) Create `Actuator` objects using the `odrive` objects above. The second argument of each `Actuator` object is the motor offset value (refer to 'Calibrate Zero Position' of [the direct-drive gripper repo](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main)). Just let the third and fourth arguments be `1` and `45` (you won't need to change these values).
 ```python
 LF0 = Actuator(odrv0, 0.966, 1, 45) # left finger
 LF1 = Actuator(odrv1, 0.955, 1, 45)
