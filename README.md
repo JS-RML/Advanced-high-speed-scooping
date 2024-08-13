@@ -53,19 +53,18 @@ Git clone our software.
 ```shell
 git clone https://github.com/JS-RML/Advanced-high-speed-scooping.git
 ```
-> Quote test
 
 Install `odrivetool`. If you've already installed this pakage when you calibrate odrive, you can skip this step.
 ```shell
 pip install --upgrade odrivetool
 ```
 
-Connect your motor drivers (odriveS1) with your PC and run 'odrivetool' in the terminal.
+Connect your motor drivers (odriveS1) with your PC and run `odrivetool` in the terminal.
 ```shell
 odrivetool
 ```
 
-If the program is intalled and the motor drivers(odriveS1) are connected successfully, then you can see the following messages
+If the program is intalled and the motor drivers (odriveS1) are connected successfully, then you will see the following messages
 ```shell
 ODrive control utility v0.6.7
 Please connect your ODrive
@@ -77,7 +76,7 @@ Connected to ODrive S1 3868345A3539 (firmware v0.6.7) as odrv2
 Connected to ODrive S1 3866346F3539 (firmware v0.6.7) as odrv3
 ```
 
-You have to remember these serial numbers(384D34783539, 383F34723539 ...) to create 'Actuator' objects.
+Record these serial numbers(384D34783539, 383F34723539 ...) to create 'Actuator' objects later.
 
 ## 3. Run High-Speed Scooping
 ### Before running the code
