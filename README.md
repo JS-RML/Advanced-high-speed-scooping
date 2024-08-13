@@ -107,9 +107,9 @@ RF0 = Actuator(odrv2, 0.977, 1, 45) # right finger
 RF1 = Actuator(odrv3, 0.338, 1, 45)
 ```
 
-Now you can control the motors. Let's select an obejct to scoop in the 'GRIPPER/mainGripper.py' source file. Also you can type directly in the source file.
+<!-- Now you can control the motors. Let's select an obejct to scoop in the 'GRIPPER/mainGripper.py' source file. Also you can type directly in the source file.-->
 
-(4) Select an object to scoop.
+(4) Set control parameters in `GRIPPER/mainGripper.py`. You can load preset values by selecting one of the options below and commenting out the others.
 ```python
 controlSignal = 'card'
 # controlSignal = 'domino'
