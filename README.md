@@ -137,11 +137,12 @@ You can operate your own robot arm in the 'thread2'. Just copy and paste the cod
 [Confusing. How to use thread2 (using a teaching pendant)? What to copy and paste? It sounds like a user need to do additional things to execute high-speed scooping after running main.py and you didn't provide full information here...]()
 
 ### Changing execution parameters
+[Edit the text below by referring to the edited text above.]()
 In the 'GRIPPER/OBJECTS/Card.py', there are some parameters you can adjust to scoop the card. The same code exist in the each object source file(domino.py, goStone.py, cracker.py ...)
 (They are all a one-dimensional array with four elements L0, L1, R0 and R1 in order.)
-- ***scoopingPosition*** : Ready position of the finger and thumb(degree).
-- ***grabPosition*** : Grab position of the finger and thumb(degree).
-- ***setStiffness*** : Each motor's position gain.
+- ***scoopingPosition*** : Ready position of the finger and thumb(degree). [Is it init conf?]()
+- ***grabPosition*** : Grab position of the finger and thumb(degree). [Is it goal conf?]()
+- ***setStiffness*** : Each motor's position gain. [How to set stiffness values differently before and after collision?]()
 - ***setVelocityGain*** : Each motor's velocity gain.
 ```python
 # Example code
