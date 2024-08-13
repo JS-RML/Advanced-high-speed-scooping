@@ -64,7 +64,7 @@ Connect your motor drivers (odriveS1) with your PC and run `odrivetool` in the t
 odrivetool
 ```
 
-If the program is intalled and the motor drivers (odriveS1) are connected successfully, then you will see the following messages
+If successful, you will see the following message.
 ```shell
 ODrive control utility v0.6.7
 Please connect your ODrive
