@@ -150,4 +150,4 @@ Gripper.SetVelocityGain([0.15,0.15,0.15,0.15])
 ```
 
 ## Maintenance
-Hyeonje Cha(guswp3611@gmail.com) and Seunghwa Oh(seunghwa9118@pusan.ac.kr)
+Hyeonje Cha (guswp3611@gmail.com) and Seunghwa Oh (seunghwa9118@pusan.ac.kr)
