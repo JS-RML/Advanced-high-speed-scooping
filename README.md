@@ -2,7 +2,7 @@
 
 ## 1. Overview
 <!-- The repository implemented a manipulation technique for picking up flat objects on hard surfaces known as high-speed scooping. Based on the ideas from HKUST's HSS, this method was performed in a variety of environments, not just on flat surfaces but also on inclined planes and the sideway-tilted planes. The experiments conducted demonstrate that this technique can be widely utilized in various settings, not just under limited and specific conditions.-->
-This repository contains the latest software implementation of **High-Speed Scooping** using our latest [direct-drive gripper](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips). It can be applied to rapidly and adaptively picking thin objects off from a hard surface, which would be quite challenging with a straightforward approach aiming at directly obtaining a pinch grasp.
+This repository contains the latest software implementation of **High-Speed Scooping** using our latest [direct-drive gripper](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips). It can be applied to rapidly and adaptively picking thin objects off from a hard surface, as illustrated below.
 ### *High-Speed Scooping*
 <p align = "center">
 <img src="media/card_.gif" width="400"> 
@@ -49,17 +49,18 @@ The passive swivel fingertips help pick the object even when the workplane of th
 ### Software
 Our software is implemented with **python3** and tested on **Ubuntu 20.04**.
 
-Clone our *Advanced-high-speed-scooping* software.
+Git clone our software.
 ```shell
 git clone https://github.com/JS-RML/Advanced-high-speed-scooping.git
 ```
+> Quote test
 
 Install `odrivetool`. If you've already installed this pakage when you calibrate odrive, you can skip this step.
 ```shell
 pip install --upgrade odrivetool
 ```
 
-Connect your motor drivers(odriveS1) with your PC and type 'odrivetool' in the terminal.
+Connect your motor drivers (odriveS1) with your PC and run 'odrivetool' in the terminal.
 ```shell
 odrivetool
 ```
