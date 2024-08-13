@@ -76,7 +76,7 @@ Connected to ODrive S1 3868345A3539 (firmware v0.6.7) as odrv2
 Connected to ODrive S1 3866346F3539 (firmware v0.6.7) as odrv3
 ```
 
-Record these serial numbers (384D34783539, 383F34723539 ...) to create 'Actuator' objects later.
+Record these serial numbers (384D34783539, 383F34723539 ...) to create `Actuator` objects later.
 
 ## 3. Run High-Speed Scooping
 ### Before running the code
