@@ -134,6 +134,8 @@ thread2 = threading.Thread(target=threadRB5) # for robot arm
 
 You can operate your own robot arm in the 'thread2'. Just copy and paste the codes to operate your own robot system. For our case, we controlled our robot arm by teaching pendant so we didn't use the 'thread2'.
 
+> Confusing. It sounds like a user need to do additional things to execute high-speed scooping after running main.py. Am I right? What to copy and paste?
+
 ### Changing execution parameters
 In the 'GRIPPER/OBJECTS/Card.py', there are some parameters you can adjust to scoop the card. The same code exist in the each object source file(domino.py, goStone.py, cracker.py ...)
 (They are all a one-dimensional array with four elements L0, L1, R0 and R1 in order.)
