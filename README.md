@@ -121,8 +121,8 @@ controlSignal = 'card'
 # controlSignal = 'testMotion'
 ```
 
-### Run with real robot
-To run the software, type **main.py** in the terminal.
+### Let the robot high-speed scoop
+Run **main.py**.
 ```shell
 python3 main.py
 ```
