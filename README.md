@@ -82,6 +82,7 @@ Record these serial numbers (384D34783539, 383F34723539 ...) to create `Actuator
 ### Before running the code
 <!-- You should create 'Actuator' objects and match the created objects and the serial numbers of motor drivers. You can type the following codes directly in the 'GRIPPER/Gripper.py' source file.-->
 Modify `GRIPPER/Gripper.py` as follows.
+
 (1) Define the variables `SN_L0`, `SN_L1`, `SN_R0`, and `SN_R1` using the serial numbers aforementioned.
 ```python
 SN_L0 = '384D34783539'
