@@ -139,10 +139,9 @@ You can operate your own robot arm in the 'thread2'. Just copy and paste the cod
 ### How to customize control parameters
 [Edit the text below by referring to the edited text above.]()
 
-In the `GRIPPER/OBJECTS/Card.py`, there are some parameters you can adjust to scoop the card. The same code exist in the each object source file(domino.py, goStone.py, cracker.py ...)
-(They are all a one-dimensional array with four elements L0, L1, R0 and R1 in order.)
-- ***scoopingPosition*** : Ready position of the finger and thumb(degree). [Is it init conf? Can you add a figure of the gripper to clearly mark L0, L1 ... values?]()
-- ***grabPosition*** : Grab position of the finger and thumb(degree). [Is it goal conf?]()
+In the `GRIPPER/OBJECTS/Card.py`, there are some parameters you can adjust to scoop the card. The parameters are all a one-dimensional array with four elements L0, L1, R0 and R1 in order. The same code exist in the each object source file(domino.py, goStone.py, cracker.py ...)
+- ***scoopingPosition*** : Initial configuration of the finger and thumb(degree). [Is it init conf? Can you add a figure of the gripper to clearly mark L0, L1 ... values?]()
+- ***grabPosition*** : Goal configuration of the finger and thumb(degree). [Is it goal conf?]()
 - ***setStiffness*** : Each motor's position gain. [How to set stiffness values differently before and after collision?]()
 - ***setVelocityGain*** : Each motor's velocity gain.
 ```python
