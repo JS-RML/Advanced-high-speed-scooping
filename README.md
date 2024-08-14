@@ -139,7 +139,7 @@ You can operate your own robot arm in the 'thread2'. Just copy and paste the cod
 ### How to customize control parameters
 [Edit the text below by referring to the edited text above.]()
 
-In the `GRIPPER/OBJECTS/Card.py`, there are some parameters you can adjust to scoop the card. The parameters are all a one-dimensional array with four elements L0, L1, R0 and R1 in order. The same code exist in the each object source file(domino.py, goStone.py, cracker.py ...) In our case the motor's labeling is as follows.
+In the `GRIPPER/OBJECTS/Card.py`, there are some parameters you can adjust to scoop the card. The parameters are all a one-dimensional array with four elements L0, L1, R0 and R1 in order. The same code exist in the each object source file(domino.py, goStone.py, cracker.py ...) In our case the motor's labelings are as follows.
 
 <p align = "center">
 <img src="images/gripper_labeling.png" width="400">
