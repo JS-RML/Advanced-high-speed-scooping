@@ -138,20 +138,21 @@ You can operate your own robot arm in the 'thread2'. Just copy and paste the cod
 
 ### How to customize control parameters
 
-Take `GRIPPER/OBJECTS/Card.py` for instance. In the code, you can find a set of control parameters preset for picking a plastic card. Each parameter is a four-tuple that specifies the values for the motors L0, L1, R0, and R1, respectively.
-
-The parameters are all a one-dimensional array with four elements L0, L1, R0 and R1 in order. The same code exist in the each object source file(domino.py, goStone.py, cracker.py ...) In our case the motor's labelings are as follows.
-
-<p align = "center">
-<img src="images/gripper_labeling.png" width="400">
-</p>
-
+There are a set of control parameters that you can customize for different objects to scoop.
 - ***initialConfiguration*** : Initial configuration (motor angles in degrees).
 - ***goalConfiguration*** : Goal configuration (motor angles in degrees).
 - ***beforeCollisionStiffness*** : Motor P-gains before collision.
 - ***afterCollisionStiffness*** : Motor P-gains after collision.
 - ***beforeCollisionVelGain*** : Motor D-gains before collision.
 - ***afterCollisionVelGain*** : Motor D-gains after collision.
+
+Each parameter is a four-tuple that specifies the values for the motors L0, L1, R0, and R1, respectively.
+<p align = "center">
+<img src="images/gripper_labeling.png" width="400">
+</p>
+
+Take `GRIPPER/OBJECTS/Card.py` for instance. In the code, the parameters are preset as follows, to scoop a plastic card. 
+
 ```python
 # Example code
 initialConfiguration = [27, 28, 44, -47]
@@ -161,6 +162,7 @@ afterCollisionStiffness = [20, 20, 100, 100]
 beforeCollisionVelGain = [0.15,0.15,0.15,0.15]
 afterCollisionVelGain = [0.15,0.15,0.15,0.15]
 ```
+
 
 ## Maintenance
 Hyeonje Cha (guswp3611@gmail.com) and Seunghwa Oh (seunghwa9118@pusan.ac.kr)
