@@ -31,10 +31,6 @@ This repository contains the latest software implementation of **High-Speed Scoo
 
 ### *Adaptive High-Speed Scooping*
 The passive swivel fingertips help pick the object even when the workplane of the gripper is not normal to the ground surface.
-<p align = "center">
-<img src="media/tilted_card.gif" width="400">
-<img src="media/tilted_domino.gif" width="400">
-</p>
 
 <p align = "center">
 <img src="media/swivel_card.gif" width="800">
