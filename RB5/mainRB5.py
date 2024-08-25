@@ -8,14 +8,14 @@ import cobot
 import signal
 
 ###### mode
-controlSignal = 'horizontal'
-# controlSignal = 'slope'
+controlSignal = 'Aoa55'
+# controlSignal = 'Aoa40'
 ######
 
 def switchCase(case):
-    if case == 'horizontal':
+    if case == 'Aoa55':
         horizontal()
-    elif case == 'slope':
+    elif case == 'Aoa40':
         slope()
     else:
         print("Check the RB5 controlSignal")
@@ -38,41 +38,16 @@ def mainRB5():
     cobot.ToCB('10.0.2.7')
     cobot.CobotInit()
     cobot.SetProgramMode(cobot.PG_MODE.REAL)
-
-    # test()
-
     switchCase(controlSignal)
     sleep(2.5)
-
     disconnectngRB5()
 
-def horizontal():
+def Aoa55():
     cobot.MoveL(x=32.09, y=-443.82, z=334.38, rx=-166.24, ry=10.05, rz=53.12, spd=-1, acc=-1)
     cobot.MoveL(x=32.10, y=-443.82, z=190, rx=-166.24, ry=10.05, rz=53.11, spd=-1, acc=-1)
     cobot.MoveL(x=32.09, y=-443.82, z=334.38, rx=-166.24, ry=10.05, rz=53.12, spd=-1, acc=-1)
 
-def slope():
-    cobot.MoveL(x=123.76, y=-448.94, z=304.20, rx=-139.6, ry=22.8, rz=67.3, spd=-1, acc=-1)
+def Aoa40():
     cobot.MoveL(x=123.76, y=-448.94, z=403.26, rx=-139.6, ry=22.8, rz=67.3, spd=-1, acc=-1)
     cobot.MoveL(x=123.76, y=-448.94, z=304.20, rx=-139.6, ry=22.8, rz=67.3, spd=-1, acc=-1)
     cobot.MoveL(x=123.76, y=-448.94, z=403.26, rx=-139.6, ry=22.8, rz=67.3, spd=-1, acc=-1)
-    cobot.MoveL(x=123.76, y=-448.94, z=304.20, rx=-139.6, ry=22.8, rz=67.3, spd=-1, acc=-1)
-
-def test():
-
-    cobot.MoveJ(j0=0, j1=0, j2=0, j3=0, j4=0.0, j5=0.0, spd=-1, acc=-1)
-    sleep(2.5)
-    cobot.MoveJ(j0=-68, j1=-4.97, j2=0, j3=0, j4=0.0, j5=0.0, spd=-1, acc=-1)
-    cobot.MoveL(x=32.09, y=-443.82, z=334.38, rx=-166.24, ry=10.05, rz=53.12, spd=-1, acc=-1)
-    sleep(2.5)
-    cobot.MoveL(x=32.10, y=-443.82, z=190, rx=-166.24, ry=10.05, rz=53.11, spd=-1, acc=-1)
-    sleep(2.5)
-    cobot.MoveL(x=32.09, y=-443.82, z=334.38, rx=-166.24, ry=10.05, rz=53.12, spd=-1, acc=-1)
-    sleep(2.5)
-    cobot.MoveITPL_Clear()
-    cobot.MotionHalt()
-    cobot.DisConnectToCB()
-
-
-
-
