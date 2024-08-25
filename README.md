@@ -36,6 +36,8 @@ The passive swivel fingertips help pick the object even when the workplane of th
 <img src="media/swivel_card.gif" width="800">
 </p>
 
+Also the fragile object like seaweed and cracker can be picked up.
+
 <p align = "center">
 <img src="media/swivel_seaweed_gif.gif" width="400">
 <img src="media/swivel_cracker_gif.gif" width="400">
