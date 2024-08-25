@@ -1,9 +1,8 @@
 from time import sleep
 import sys
 import os
-current_dir_rb = os.path.dirname(os.path.abspath(__file__)) # 예를들어 부모 디렉토리를 만든다면 parent_dir = os.path.join(current_dir, '..') 이렇게도 가능
+current_dir_rb = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(current_dir_rb)
-# from enums import FREQUANCY
 import cobot
 import signal
 
@@ -14,9 +13,9 @@ controlSignal = 'Aoa55'
 
 def switchCase(case):
     if case == 'Aoa55':
-        horizontal()
+        Aoa55()
     elif case == 'Aoa40':
-        slope()
+        Aoa40()
     else:
         print("Check the RB5 controlSignal")
 
