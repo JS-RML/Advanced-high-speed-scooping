@@ -37,7 +37,7 @@ The passive swivel fingertips help pick the object even when the workplane of th
 </p>
 
 <p align = "center">
-<img src="media/swivel_card.gif">
+<img src="media/swivel_card.gif" width="800">
 </p>
 
 <p align = "center">
