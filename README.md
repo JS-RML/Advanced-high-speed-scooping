@@ -126,15 +126,6 @@ Run **main.py**.
 ```shell
 python3 main.py
 ```
-Then two threads run simultaneously.
-```python
-thread1 = threading.Thread(target=threadGripper) # for gripper
-thread2 = threading.Thread(target=threadRB5) # for robot arm
-```
-
-You can operate your own robot arm in the 'thread2'. Just copy and paste the codes to operate your own robot system. For our case, we controlled our robot arm by teaching pendant so we didn't use the 'thread2'.
-
-[Confusing. How to use thread2 (using a teaching pendant)? What to copy and paste? It sounds like a user need to do additional things to execute high-speed scooping after running main.py and you didn't provide full information here...]()
 
 ### How to customize control parameters
 
