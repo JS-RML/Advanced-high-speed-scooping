@@ -30,13 +30,13 @@ This repository contains the latest software implementation of **High-Speed Scoo
 -->
 
 ### *Adaptive High-Speed Scooping*
-Our swivel fingertips help scoop objects even when the workplane of the gripper is not exactly normal to the ground surface.
+Our swivel fingertips help scoop objects even when the gripper's workplane is not exactly normal to the ground surface.
 
 <p align = "center">
 <img src="media/swivel_card.gif" width="800">
 </p>
 
-Also fragile objects like seaweed and cracker can be picked up.
+Fragile objects, such as seaweed and cracker, can also be picked up.
 
 <p align = "center">
 <img src="media/swivel_seaweed_gif.gif" width="400">
