@@ -2,24 +2,42 @@ import numpy as np
 from time import sleep
 from GRIPPER import Gripper
 
-def ScoopingCracker():
-    print("   [GRIPPER/ CRACKER]")
+def ScoopingCrackerSwivel():
+    timeStep = 0.0
+    firstRun = True
+    tempEncoderVar = np.zeros(4)
+    prevtempEncoderVar = np.zeros(4)
+    encoderDifference = np.zeros(4)
+
+    scoopingPosition = [11, 21, 35, -40]
+    grabPosition = [50, 15, -55, -10] # new grab
 
     Gripper.SetControlState()
-    Gripper.SetMotorPosition([-36, 97, 49, -111])
-    sleep(0.5)
-    Gripper.SetMotorPosition([44, 23, -41, -16])
-    sleep(0.5)
-    Gripper.SetMotorPosition([-36, 97, 49, -111])
-    sleep(0.5)
-    Gripper.SetMotorPosition([44, 23, -41, -16])
-    sleep(0.5)
-    Gripper.SetMotorPosition([-36, 97, 49, -111])
-    sleep(0.5)
-    Gripper.SetMotorPosition([44, 23, -41, -16])
-    sleep(0.5)
+    Gripper.SetMotorPosition(scoopingPosition)
+    sleep(1.0)
+    Gripper.SetStiffness([20,20,20,20])
+    Gripper.SetVelocityGain([0.15,0.15,0.15,0.15])
 
-    # 44, 23, -41, -16 모음
-    # -36, 97, 49, -111 벌림
+    while(timeStep < 5):
+        tempEncoderVar = Gripper.GetEncoderValue()
+
+        if(firstRun):
+            prevtempEncoderVar = tempEncoderVar
+            firstRun = False
+        else:
+            pass
+
+        encoderDifference = abs(tempEncoderVar - prevtempEncoderVar)
+
+        if encoderDifference[0] > 0.01 or encoderDifference[1] > 0.01:
+            Gripper.SetStiffness([20,20,20,20])
+            Gripper.SetVelocityGain([0.15, 0.15, 0.15, 0.15])
+            Gripper.SetMotorPosition(grabPosition)
+        else :
+            pass
+
+        timeStep += 1/FREQUENCY
+        sleep(1/FREQUENCY)
+        prevtempEncoderVar = tempEncoderVar
 
     Gripper.SetIdleState()
