@@ -12,34 +12,38 @@ def ScoopingCrackerSwivel():
     initialConfiguration = [11, 21, 35, -40]
     goalConfiguration = [50, 15, -55, -10]
     beforeCollisionStiffness = [20, 20, 20, 20]
-    afterCollisionStiffness = [20,20,20,20]
+    afterCollisionStiffness = [20, 20, 20, 20]
     beforeCollisionVelGain = [0.15, 0.15, 0.15, 0.15]
     afterCollisionVelGain = [0.15, 0.15, 0.15, 0.15]
 
     Gripper.SetControlState()
-    Gripper.SetMotorPosition(scoopingPosition)
+    Gripper.SetMotorPosition(initialConfiguration)
     sleep(1.0)
-    Gripper.SetStiffness([20,20,20,20])
-    Gripper.SetVelocityGain([0.15,0.15,0.15,0.15])
+    Gripper.SetStiffness(beforeCollisionStiffness)
+    Gripper.SetVelocityGain(beforeCollisionVelGain)
 
-    while(timeStep < 5):
+    while(timeStep < 4):
+        Gripper.sharedTimeList.append(timeStep)
+        Gripper.sharedPositionList.append(Gripper.GetMotorPosition()[0])
+
         tempEncoderVar = Gripper.GetEncoderValue()
 
         if(firstRun):
             prevtempEncoderVar = tempEncoderVar
             firstRun = False
-        else:
+        else :
             pass
 
         encoderDifference = abs(tempEncoderVar - prevtempEncoderVar)
 
         if encoderDifference[0] > 0.01 or encoderDifference[1] > 0.01:
-            Gripper.SetStiffness([20,20,20,20])
-            Gripper.SetVelocityGain([0.15, 0.15, 0.15, 0.15])
-            Gripper.SetMotorPosition(grabPosition)
+            Gripper.SetStiffness(afterCollisionStiffness)
+            Gripper.SetVelocityGain(afterCollisionVelGain)
+            Gripper.SetMotorPosition(goalConfiguration)
         else :
             pass
 
+        print(encoderDifference)
         timeStep += 1/FREQUENCY
         sleep(1/FREQUENCY)
         prevtempEncoderVar = tempEncoderVar
