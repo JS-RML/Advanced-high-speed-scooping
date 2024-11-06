@@ -9,8 +9,12 @@ def ScoopingCrackerSwivel():
     prevtempEncoderVar = np.zeros(4)
     encoderDifference = np.zeros(4)
 
-    scoopingPosition = [11, 21, 35, -40]
-    grabPosition = [50, 15, -55, -10] # new grab
+    initialConfiguration = [11, 21, 35, -40]
+    goalConfiguration = [50, 15, -55, -10]
+    beforeCollisionStiffness = [20, 20, 20, 20]
+    afterCollisionStiffness = [20,20,20,20]
+    beforeCollisionVelGain = [0.15, 0.15, 0.15, 0.15]
+    afterCollisionVelGain = [0.15, 0.15, 0.15, 0.15]
 
     Gripper.SetControlState()
     Gripper.SetMotorPosition(scoopingPosition)
