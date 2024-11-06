@@ -3,25 +3,27 @@ from time import sleep
 from GRIPPER import Gripper
 from GRIPPER.Gripper import FREQUENCY
 
-def ScoopingSeaweed():
-    print("   [GRIPPER/ SEAWEED]")
-
+def ScoopingSeaweedSwivel():
     timeStep = 0.0
     firstRun = True
     tempEncoderVar = np.zeros(4)
     prevtempEncoderVar = np.zeros(4)
     encoderDifference = np.zeros(4)
 
-    scoopingPosition = [41, 16, 24, -37]
-    grabPosition = [45, 10, -35, -17]
+    initialConfiguration = [11, 21, 35, -40]
+    goalConfiguration = [50, 15, -55, -10]
+    beforeCollisionStiffness = [20, 20, 20, 20]
+    afterCollisionStiffness = [20, 20, 20, 20]
+    beforeCollisionVelGain = [0.15, 0.15, 0.15, 0.15]
+    afterCollisionVelGain = [0.15, 0.15, 0.15, 0.15]
 
     Gripper.SetControlState()
-    Gripper.SetMotorPosition(scoopingPosition)
+    Gripper.SetMotorPosition(initialConfiguration)
     sleep(1.0)
-    Gripper.SetStiffness([10,10,30,30])
-    Gripper.SetVelocityGain([0.1,0.1,0.1,0.1])
+    Gripper.SetStiffness(beforeCollisionStiffness)
+    Gripper.SetVelocityGain(beforeCollisionVelGain)
 
-    while(timeStep < 3):
+    while(timeStep < 4):
         Gripper.sharedTimeList.append(timeStep)
         Gripper.sharedPositionList.append(Gripper.GetMotorPosition()[0])
 
@@ -35,11 +37,10 @@ def ScoopingSeaweed():
 
         encoderDifference = abs(tempEncoderVar - prevtempEncoderVar)
 
-        if encoderDifference[0] > 0.005 or encoderDifference[1] > 0.005:
-            Gripper.SetStiffness([10,10,10,10])
-            Gripper.SetVelocityGain([0.1, 0.1, 0.1, 0.1])
-
-            Gripper.SetMotorPosition(grabPosition)
+        if encoderDifference[0] > 0.01 or encoderDifference[1] > 0.01:
+            Gripper.SetStiffness(afterCollisionStiffness)
+            Gripper.SetVelocityGain(afterCollisionVelGain)
+            Gripper.SetMotorPosition(goalConfiguration)
         else :
             pass
 
