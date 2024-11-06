@@ -16,7 +16,7 @@ def ScoopingCard():
     initialConfiguration = [27, 28, 44, -47]
     goalConfiguration = [45, 10, -35, -17]
     beforeCollisionStiffness = [20, 20, 20, 20]
-    afterCollisionStiffness = [20, 20, 100, 100]
+    afterCollisionStiffness = [50, 50, 100, 100]
     beforeCollisionVelGain = [0.15, 0.15, 0.15, 0.15]
     afterCollisionVelGain = [0.15, 0.15, 0.15, 0.15]
 
